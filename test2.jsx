@@ -19,7 +19,6 @@ export default class Tester2 extends React.Component {
       let characters = Object.keys(this.props.route.props).map(function(key) {
         return that.props.route.props[key];
       });
-      console.log(characters);
 
       return(
         <div className="splashScreen">
@@ -30,8 +29,8 @@ export default class Tester2 extends React.Component {
               <p className="titleRoma">Romaji</p>
               <p className="titlePro">Pronunciation</p>
             </div>
-              {characters.map((line) => (
-            <ul className="charIndex">
+              {characters.map((line, idx) => (
+            <ul key={idx} className="charIndex">
               <img className="index-img" src={line.jChar}></img>
               <p>{line.eChar}</p>
               <p className="charPro">{line.pChar}</p>

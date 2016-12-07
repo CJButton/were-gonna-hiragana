@@ -58,17 +58,23 @@ html {
   padding-left: 0px;
 }
 
+
 .titlesIndex {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  padding-top: 70px;
 }
 
 .titleRoma {
-  padding-left: 50px;
-
+  margin-left:  250px;
 }
 
 .titleHira {
+  margin-left: 135px;
+}
+
+.titlePro {
+  margin-left: 220px;
 }
 
 .index-img {

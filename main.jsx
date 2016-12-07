@@ -23,12 +23,16 @@ const allKana = new Kana;
 var routes = (
   <Route path="/" component={App}>
     <IndexRoute component={Tester}/>
-    <Route path="test2" component={Tester2} props={allKana.kCharacters()}/>
-    <Route path="test3" component={Tester2} props={allKana.sCharacters()}/>
-    <Route path="test4" component={Tester2} props={allKana.sCharacters()}/>
-    <Route path="test5" component={Tester2} props={allKana.sCharacters()}/>
-    <Route path="test6" component={Tester2} props={allKana.sCharacters()}/>
-
+    <Route path="kCharacters" component={Tester2} props={allKana.kCharacters()}/>
+    <Route path="sCharacters" component={Tester2} props={allKana.sCharacters()}/>
+    <Route path="vCharacters" component={Tester2} props={allKana.sCharacters()}/>
+    <Route path="tCharacters" component={Tester2} props={allKana.sCharacters()}/>
+    <Route path="nCharacters" component={Tester2} props={allKana.sCharacters()}/>
+    <Route path="hCharacters" component={Tester2} props={allKana.sCharacters()}/>
+    <Route path="mCharacters" component={Tester2} props={allKana.sCharacters()}/>
+    <Route path="yCharacters" component={Tester2} props={allKana.sCharacters()}/>
+    <Route path="rCharacters" component={Tester2} props={allKana.sCharacters()}/>
+    <Route path="specialCharacters" component={Tester2} props={allKana.sCharacters()}/>
   </Route>
 );
 

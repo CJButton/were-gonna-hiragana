@@ -9,13 +9,6 @@ export default class Dropdown1 extends React.Component {
     super(props);
   }
 
-  // jquery to open display the list items
-  // <div>
-  //              <input type="submit" value="Search" onClick={this.onClick} />
-  //              { this.state.showResults ? <Results /> : null }
-  //          </div>
-
-
   render() {
     return(
       <div className="dropdown-Container">

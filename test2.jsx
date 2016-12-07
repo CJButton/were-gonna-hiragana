@@ -12,7 +12,6 @@ export default class Tester2 extends React.Component {
       this.state = {
         props: this.props.route.props
       };
-      console.log(props.route.props);
     }
 
     render() {
@@ -22,22 +21,31 @@ export default class Tester2 extends React.Component {
       });
       console.log(characters);
 
-
       return(
         <div className="splashScreen">
-          <div className="tester">
-            {function() {
-              return <p>Does this appear?</p>;
-            }}
+
+          <div>
+            <div className="titlesIndex">
+              <p className="titleHira">Hiragana</p>
+              <p className="titleRoma">Romaji</p>
+              <p className="titlePro">Pronunciation</p>
+            </div>
+              {characters.map((line) => (
+            <ul className="charIndex">
+              <img className="index-img" src={line.jChar}></img>
+              <p>{line.eChar}</p>
+              <p className="charPro">{line.pChar}</p>
+            </ul>
+              ))}
           </div>
 
-        <ul className="ulThing">
-        </ul>
         <button><Link to="/">Back to Index</Link></button>
+
         </div>
       );
     }
 }
+// <p>How about this</p>
 // {characters.forEach((item) => {
 //   return <div>Tester for .each</div>;
 //   })};

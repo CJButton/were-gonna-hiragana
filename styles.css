@@ -52,9 +52,28 @@ html {
   width: 900px;
 }
 
-.ulThing {
-  height: 100px;
-  width: 100px;
+.charIndex {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 0px;
+}
+
+.titlesIndex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.titleRoma {
+  padding-left: 50px;
+
+}
+
+.titleHira {
+}
+
+.index-img {
+  width: 58px;
+  height: 58px;
 }
 
 .dropdown-button {

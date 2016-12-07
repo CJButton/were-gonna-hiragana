@@ -3,7 +3,7 @@
 
 module.exports = {
   context: __dirname,
-  entry: "./main.js",
+  entry: "./main.jsx",
   output: {
     path: "./",
     filename: "bundle.js"

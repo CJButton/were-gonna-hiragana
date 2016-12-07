@@ -25,6 +25,10 @@ var routes = (
     <IndexRoute component={Tester}/>
     <Route path="test2" component={Tester2} props={allKana.kCharacters()}/>
     <Route path="test3" component={Tester2} props={allKana.sCharacters()}/>
+    <Route path="test4" component={Tester2} props={allKana.sCharacters()}/>
+    <Route path="test5" component={Tester2} props={allKana.sCharacters()}/>
+    <Route path="test6" component={Tester2} props={allKana.sCharacters()}/>
+
   </Route>
 );
 

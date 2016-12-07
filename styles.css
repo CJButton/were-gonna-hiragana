@@ -14,13 +14,35 @@ html {
 
 .curve {
   width:800px; height:100px;
-  border:solid 5px #000;
+  border: solid 2px #000;
   border-color:#000 transparent transparent transparent;
   border-radius: 50%/100px 100px 0 0;
-  position: fixed;
-  padding-left: 100px;
+  position: absolute;
+  padding-left: 90px;
   margin-top: 300px;
-  z-index: 0
+  background-color: white;
+  z-index: 1
+}
+
+.sun {
+  border-color: black;
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+  margin-top: 200px;
+  margin-left: 50px;
+  position: absolute;
+  z-index: 0;
+  background-color: red;
+}
+
+.splashText {
+  margin-top: 80px;
+  padding-left: 50px;
+  padding-right: 70px;
+  margin-right: 50px;
+  position: absolute;
+  z-index: 2;
 }
 
 .splashScreen {
@@ -30,12 +52,25 @@ html {
   width: 900px;
 }
 
+.dropdown-button {
+  margin-left: 200px;
+}
+
 .dropdown-Container {
-  display: flex;
-  justify-content: center;
-  padding-left: 50px;
+  margin-left: 200px;
+  position: absolute;
+  z-index: 4;
 }
 
 .dropdown-list {
-
+  list-style-position:inside;
+  border: 1px solid black;
+  list-style-type: none;
+  border-radius: 15px;
+  border-color: black;
+  margin: 3px;
+  background-color: white;
+  position: absolute;
+  z-index: 4;
+  width: 115px;
 }

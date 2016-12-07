@@ -1,0 +1,41 @@
+
+
+.logo {
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+
+.curve {
+  width:800px; height:100px;
+  border:solid 5px #000;
+  border-color:#000 transparent transparent transparent;
+  border-radius: 50%/100px 100px 0 0;
+  position: fixed;
+  padding-left: 100px;
+  margin-top: 300px;
+  z-index: 0
+}
+
+.splashScreen {
+  border-radius: 25px;
+  background-color: white;
+  height: 600px;
+  width: 900px;
+}
+
+.dropdown-Container {
+  display: flex;
+  justify-content: center;
+  padding-left: 50px;
+}
+
+.dropdown-list {
+
+}

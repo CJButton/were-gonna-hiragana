@@ -1,17 +1,18 @@
 
 
 
-import { Router, Route, Link } from 'react-router';
+import { Router, Route, Link, browserHistory } from 'react-router';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-export default class Tester2 extends React.Component {
+export default class QuizStudy extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         props: this.props.route.props
       };
+
     }
 
     render() {
@@ -23,9 +24,7 @@ export default class Tester2 extends React.Component {
       return(
         <div className="splashScreen">
 
-          <button className="splashButton">
-            <Link to="/">Back to Index</Link>
-          </button>
+            <Link className="splashLink" to="/"><button className="splashButton">Back to Index</button></Link>
           <div>
             <div className="titlesIndex">
               <p className="titleHira">Hiragana</p>
@@ -52,3 +51,6 @@ export default class Tester2 extends React.Component {
 //   })};
 // <img src={characters[0].jChar}></img>
 // <p>{characters[0].eChar}</p>
+
+// <button className="splashButton">
+// </button>

@@ -23,6 +23,9 @@ export default class Tester2 extends React.Component {
       return(
         <div className="splashScreen">
 
+          <button className="splashButton">
+            <Link to="/">Back to Index</Link>
+          </button>
           <div>
             <div className="titlesIndex">
               <p className="titleHira">Hiragana</p>
@@ -38,7 +41,6 @@ export default class Tester2 extends React.Component {
               ))}
           </div>
 
-        <button><Link to="/">Back to Index</Link></button>
 
         </div>
       );

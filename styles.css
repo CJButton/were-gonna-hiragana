@@ -58,11 +58,20 @@ html {
   padding-left: 0px;
 }
 
+.splashButton {
+  display: flex;
+  position: absolute;
+  z-index: 1
+  background-color: red;
+  color: white;
+  border: none;
+  margin-top: 35px;
+}
 
 .titlesIndex {
   display: flex;
   flex-direction: row;
-  padding-top: 70px;
+  padding-top: 60px;
 }
 
 .titleRoma {

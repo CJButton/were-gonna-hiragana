@@ -112,6 +112,15 @@ button:focus {
   height: 58px;
 }
 
+.quizImageArea {
+  display: flex;
+  justify-content: center;
+}
+
+.quizChar {
+  height: 300px;
+}
+
 .dropdown-button {
   margin-left: 161px;
   background: red;

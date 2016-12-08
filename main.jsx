@@ -21,12 +21,17 @@ var App = React.createClass({
 
 const allKana = new Kana;
 
+// is there a better way to pass the props? maybe I can make the call using
+// the name of the route? Let's give that a try
 var routes = (
   <Route path="/" component={App}>
     <IndexRoute component={Tester}/>
     <Route path="kCharacters" component={quizStudy} props={allKana.kCharacters()}/>
       <Route path="kCharacters/quiz" component={quiz}/>
+
     <Route path="sCharacters" component={quizStudy} props={allKana.sCharacters()}/>
+      <Route path="sCharacters/quiz" component={quiz}/>
+      
     <Route path="vCharacters" component={quizStudy} props={allKana.sCharacters()}/>
     <Route path="tCharacters" component={quizStudy} props={allKana.sCharacters()}/>
     <Route path="nCharacters" component={quizStudy} props={allKana.sCharacters()}/>

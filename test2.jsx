@@ -11,8 +11,7 @@ export default class QuizStudy extends React.Component {
       super(props);
       this.state = {
         props: this.props.route.props
-      };
-
+        };
     }
 
     render() {
@@ -24,7 +23,11 @@ export default class QuizStudy extends React.Component {
       return(
         <div className="splashScreen">
 
-            <Link className="splashLink" to="/"><button className="splashButton">Back to Index</button></Link>
+            <Link className="splashLink" to="/">
+              <button className="splashButton">Back to Index
+              </button>
+            </Link>
+
           <div>
             <div className="titlesIndex">
               <p className="titleHira">Hiragana</p>
@@ -40,17 +43,13 @@ export default class QuizStudy extends React.Component {
               ))}
           </div>
 
+          <Link className="quizLink"
+                to={`/` + this.props.route.path + `/quiz`}>
+                <button className="quizToLink">When you're ready, click here
+                </button>
+                </Link>
 
         </div>
       );
     }
 }
-// <p>How about this</p>
-// {characters.forEach((item) => {
-//   return <div>Tester for .each</div>;
-//   })};
-// <img src={characters[0].jChar}></img>
-// <p>{characters[0].eChar}</p>
-
-// <button className="splashButton">
-// </button>

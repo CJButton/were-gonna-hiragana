@@ -121,37 +121,45 @@ button:focus {
   height: 300px;
 }
 
-.cardContainerTop {
+
+
+.quizTop {
   display: flex;
   justify-content: center;
 }
 
-
-.cardContainerTop div {
-  margin: 10px;
+.quizBottom {
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
 }
+
+.cardContainerTop {
+  width: 225px;
+  display: flex;
+  justify-content: space-between;
+}
+
 
 .cardContainerBottom {
+  width: 225px;
   display: flex;
-  justify-content: center;
-}
-
-.cardContainerBottom div {
-  margin: 10px;
+  justify-content: space-between;;
 }
 
 
 .card1 {
-  /*width: 100px;
+  width: 100px;
   height: 100px;
   transition: transform 1s;
-  transform-style: preserve-3d;*/
+  transform-style: preserve-3d;
   /*animation: flipper 2s infinite;*/
   /*animation-direction: alternate;*/
   /*background-color: red*/
 }
 
-/*.card1 div {
+.card1 div {
+  display: block;
   height: 100%;
   width: 100%;
   color: white;
@@ -159,35 +167,22 @@ button:focus {
   font-size: 100px;
   position: absolute;
   backface-visibility: hidden;
-}*/
-
-.card1 .front .back {
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .card1 .front {
-  z-index: 2;
-  /*top: 0;*/
-  /*left: 0;*/
   background: purple;
-  /*position: absolute;*/
 }
 
 .card1 .back {
-  /*top: 0;*/
-  /*left: 0;*/
-  /*backface-visibility: hidden;*/
   background: blue;
   transform: rotateY(180deg);
-  /*position: absolute;*/
 }
 
 .card1.flipped {
   transform: rotateY(180deg);
 }
+
+
 
 
 

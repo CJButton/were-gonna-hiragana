@@ -12,6 +12,8 @@ export default class QuizStudy extends React.Component {
       this.state = {
         characterIdx: 0,
         showLink: false,
+        cardBackColorX: "red",
+        cardBackColorO: "green",
         card1: "card1",
         card2: "card2",
         card3: "card3",
@@ -134,6 +136,7 @@ export default class QuizStudy extends React.Component {
     }
 
     render() {
+
       return(
         <div className="splashScreen">
 
@@ -154,14 +157,14 @@ export default class QuizStudy extends React.Component {
 
              <div className={this.state.card1} onClick={this.toggleFlip1}>
                <div className="card1 front">{this.state.value1.eChar}</div>
-               <div className="card1 back">
+               <div className={`card1 back ` + this.markDecider(this.state.value1.eChar)}>
                     {this.markDecider(this.state.value1.eChar)}</div>
              </div>
 
 
             <div className={this.state.card2} onClick={this.toggleFlip2}>
               <div className="card2 front">{this.state.value2.eChar}</div>
-              <div className="card2 back">
+              <div className={`card2 back ` + this.markDecider(this.state.value2.eChar)}>
                     {this.markDecider(this.state.value2.eChar)}</div>
             </div>
 
@@ -175,13 +178,13 @@ export default class QuizStudy extends React.Component {
 
           <div className={this.state.card3} onClick={this.toggleFlip3}>
             <div className="card3 front">{this.state.value3.eChar}</div>
-            <div className="card3 back">
+            <div className={`card3 back ` + this.markDecider(this.state.value3.eChar)}>
                     {this.markDecider(this.state.value3.eChar)}</div>
           </div>
 
           <div className={this.state.card4} onClick={this.toggleFlip4}>
             <div className="card4 front">{this.state.value4.eChar}</div>
-            <div className="card4 back">
+            <div className={`card4 back ` + this.markDecider(this.state.value4.eChar)}>
                     {this.markDecider(this.state.value4.eChar)}</div>
           </div>
 
@@ -194,3 +197,4 @@ export default class QuizStudy extends React.Component {
       );
     }
 }
+// <div className="card1 back"></div>

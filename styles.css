@@ -169,14 +169,14 @@ button:focus {
   backface-visibility: hidden;
 }
 
-.card1 .front {
+/*.card1 .front {
   background: purple;
 }
 
 .card1 .back {
   background: blue;
   transform: rotateY(180deg);
-}
+}*/
 
 .card1.flipped {
   transform: rotateY(180deg);
@@ -207,14 +207,14 @@ button:focus {
   backface-visibility: hidden;
 }
 
-.card2 .front {
+/*.card2 .front {
   background: purple;
 }
 
 .card2 .back {
   background: blue;
   transform: rotateY(180deg);
-}
+}*/
 
 .card2.flipped {
   transform: rotateY(180deg);
@@ -246,14 +246,14 @@ button:focus {
   backface-visibility: hidden;
 }
 
-.card3 .front {
+/*.card3 .front {
   background: purple;
 }
 
 .card3 .back {
   background: blue;
   transform: rotateY(180deg);
-}
+}*/
 
 .card3.flipped {
   transform: rotateY(180deg);
@@ -281,13 +281,18 @@ button:focus {
   backface-visibility: hidden;
 }
 
-.card4 .front {
-  background: purple;
+.front {
+  background: pink;
+}
+
+.back {
+  background: orange;
+  transform: rotateY(180deg);
 }
 
 .card4 .back {
-  background: blue;
-  transform: rotateY(180deg);
+  /*background: blue;*/
+  /*transform: rotateY(180deg);*/
 }
 
 .card4.flipped {
@@ -304,6 +309,14 @@ button:focus {
     transform: rotateY(180deg);
   }
 }*/
+
+.X {
+  background: red;
+}
+
+.O {
+  background: green;
+}
 
 .quizLink {
   display: hidden;

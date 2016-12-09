@@ -52,6 +52,9 @@ export default class QuizStudy extends React.Component {
       let newIdx = this.state.characterIdx + 1;
 
       if (newIdx < this.state.props.length) {
+        console.log("updating state from correct Answer");
+        console.log(this.state);
+        // fires once the correct answer has been found
         this.setState({
           characterIdx: newIdx,
           card1: "card1",
@@ -111,6 +114,7 @@ export default class QuizStudy extends React.Component {
       });
     }
 
+
     uniqueCards(arr) {
 
       let cardArray = [];
@@ -127,6 +131,9 @@ export default class QuizStudy extends React.Component {
       this.shuffle(cardArray);
     }
 
+    // setTimeout(() => {
+    //   this.markDecider(cardBack); }, 5000);
+
     markDecider(cardFace) {
       if (this.state.props[this.state.characterIdx].eChar === cardFace) {
         return ("O");
@@ -134,6 +141,8 @@ export default class QuizStudy extends React.Component {
         return ("X");
       }
     }
+    // setTimeout(() => {
+    //   this.markDecider(cardBack); }, 5000);
 
     render() {
 

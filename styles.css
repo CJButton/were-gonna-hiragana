@@ -305,6 +305,10 @@ button:focus {
   }
 }*/
 
+.nextQuiz {
+  display: none;
+}
+
 
 .dropdown-button {
   margin-left: 161px;

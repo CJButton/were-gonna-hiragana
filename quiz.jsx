@@ -24,6 +24,9 @@ export default class QuizStudy extends React.Component {
       this.toggleFlip2 = this.toggleFlip2.bind(this);
       this.toggleFlip3 = this.toggleFlip3.bind(this);
       this.toggleFlip4 = this.toggleFlip4.bind(this);
+
+      this.successMessage = this.successMessage.bind(this);
+      this.nextGroup = this.nextGroup.bind(this);
     }
 
     // in es6, we need to use componentWillReceiveProps
@@ -38,26 +41,36 @@ export default class QuizStudy extends React.Component {
         return (characterSet[key]);
       });
 
-      let groupIdx = charactersArray.pop();
+      let nextGroup = charactersArray.pop();
 
       this.setState({props: charactersArray,
-                     groupIdx: groupIdx});
+                     next: nextGroup});
       this.uniqueCards(charactersArray);
     }
 
     correctAnswer() {
       let newIdx = this.state.characterIdx += 1;
-      if (newIdx > this.state.props.length) {
-        
-      }
 
-      this.setState({characterIdx: newIdx,
-                     card1: "card1",
-                     card2: "card2",
-                     card3: "card3",
-                     card4: "card4"
-      });
-      this.uniqueCards(this.state.props);
+      if (newIdx < this.state.props.length) {
+        this.setState({
+          characterIdx: newIdx,
+          card1: "card1",
+          card2: "card2",
+          card3: "card3",
+          card4: "card4"
+        });
+        this.uniqueCards(this.state.props);
+      }
+    }
+
+    successMessage() {
+      console.log(this.state.characterIdx);
+      if (this.state.characterIdx === this.state.props.length)
+        return(<p className="successMessage">Great job! You did it!</p>);
+    }
+
+    nextGroup() {
+
     }
 
     toggleFlip1() {
@@ -122,7 +135,6 @@ export default class QuizStudy extends React.Component {
 
 
     render() {
-      console.log(this.state);
       return(
         <div className="splashScreen">
 

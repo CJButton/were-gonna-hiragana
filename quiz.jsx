@@ -38,18 +38,26 @@ export default class QuizStudy extends React.Component {
         return (characterSet[key]);
       });
 
-      this.setState({props: charactersArray});
+      let groupIdx = charactersArray.pop();
+
+      this.setState({props: charactersArray,
+                     groupIdx: groupIdx});
       this.uniqueCards(charactersArray);
     }
 
     correctAnswer() {
       let newIdx = this.state.characterIdx += 1;
+      if (newIdx > this.state.props.length) {
+        
+      }
+
       this.setState({characterIdx: newIdx,
                      card1: "card1",
                      card2: "card2",
                      card3: "card3",
                      card4: "card4"
       });
+      this.uniqueCards(this.state.props);
     }
 
     toggleFlip1() {
@@ -114,7 +122,7 @@ export default class QuizStudy extends React.Component {
 
 
     render() {
-
+      console.log(this.state);
       return(
         <div className="splashScreen">
 

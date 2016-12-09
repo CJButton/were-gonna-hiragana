@@ -19,7 +19,7 @@ export default class QuizStudy extends React.Component {
       let characters = Object.keys(this.props.route.props).map(function(key) {
         return that.props.route.props[key];
       });
-
+      characters.pop();
       return(
         <div className="splashScreen">
 

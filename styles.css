@@ -121,18 +121,77 @@ button:focus {
   height: 300px;
 }
 
-.cardContainer {
+.cardContainerTop {
   display: flex;
   justify-content: center;
 }
 
-.cardContainer div {
-  margin: 5px;
+
+.cardContainerTop div {
+  margin: 10px;
+}
+
+.cardContainerBottom {
+  display: flex;
+  justify-content: center;
+}
+
+.cardContainerBottom div {
+  margin: 10px;
+}
+
+
+.card1 {
+  /*width: 100px;
+  height: 100px;
+  transition: transform 1s;
+  transform-style: preserve-3d;*/
+  /*animation: flipper 2s infinite;*/
+  /*animation-direction: alternate;*/
+  /*background-color: red*/
+}
+
+/*.card1 div {
+  height: 100%;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 100px;
+  position: absolute;
+  backface-visibility: hidden;
+}*/
+
+.card1 .front .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card1 .front {
+  z-index: 2;
+  /*top: 0;*/
+  /*left: 0;*/
+  background: purple;
+  /*position: absolute;*/
+}
+
+.card1 .back {
+  /*top: 0;*/
+  /*left: 0;*/
+  /*backface-visibility: hidden;*/
+  background: blue;
+  transform: rotateY(180deg);
+  /*position: absolute;*/
+}
+
+.card1.flipped {
+  transform: rotateY(180deg);
 }
 
 
 
-.card1 {
+.card2 {
   width: 100px;
   height: 100px;
   transition: transform 1s;
@@ -142,7 +201,7 @@ button:focus {
   /*background-color: red*/
 }
 
-.card1 div {
+.card2 div {
   display: block;
   height: 100%;
   width: 100%;
@@ -153,18 +212,21 @@ button:focus {
   backface-visibility: hidden;
 }
 
-.card1 .front {
+.card2 .front {
   background: purple;
 }
 
-.card1 .back {
+.card2 .back {
   background: blue;
-  transform: rotateY(-180deg);
+  transform: rotateY(180deg);
 }
 
-.card1.flipped {
-  transform: rotateY(-180deg);
+.card2.flipped {
+  transform: rotateY(180deg);
 }
+
+
+
 
 
 
@@ -203,10 +265,6 @@ button:focus {
 }
 
 
-
-
-
-
 .card4 {
   width: 100px;
   height: 100px;
@@ -240,7 +298,6 @@ button:focus {
 .card4.flipped {
   transform: rotateY(180deg);
 }
-
 
 /*
 @keyframes flipper {

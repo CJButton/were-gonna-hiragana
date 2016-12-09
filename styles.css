@@ -305,10 +305,9 @@ button:focus {
   }
 }*/
 
-.nextQuiz {
-  display: none;
+.quizLink {
+  display: hidden;
 }
-
 
 .dropdown-button {
   margin-left: 161px;

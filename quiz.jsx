@@ -6,14 +6,16 @@ import { Router, Route, Link, browserHistory } from 'react-router';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
+// card1 toggles card to flip/unflip
+// value1 stores current cards object
+// cardBack1 is specifically the
 export default class QuizStudy extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         characterIdx: 0,
         showLink: false,
-        cardBackColorX: "red",
-        cardBackColorO: "green",
         card1: "card1",
         card2: "card2",
         card3: "card3",
@@ -21,7 +23,11 @@ export default class QuizStudy extends React.Component {
         value1: "",
         value2: "",
         value3: "",
-        value4: ""
+        value4: "",
+        cardBack1: "",
+        cardBack2: "",
+        cardBack3: "",
+        cardBack4: ""
       };
       this.toggleFlip1 = this.toggleFlip1.bind(this);
       this.toggleFlip2 = this.toggleFlip2.bind(this);
@@ -52,9 +58,8 @@ export default class QuizStudy extends React.Component {
       let newIdx = this.state.characterIdx + 1;
 
       if (newIdx < this.state.props.length) {
-        console.log("updating state from correct Answer");
-        console.log(this.state);
-        // fires once the correct answer has been found
+
+        // turns all of the cards back over to show the face
         this.setState({
           characterIdx: newIdx,
           card1: "card1",
@@ -62,6 +67,7 @@ export default class QuizStudy extends React.Component {
           card3: "card3",
           card4: "card4"
         });
+
         this.uniqueCards(this.state.props);
       } else if (newIdx >= this.state.props.length) {
         this.setState({
@@ -70,10 +76,16 @@ export default class QuizStudy extends React.Component {
       }
     }
 
+    // cardBack() {
+    //   this.setState({
+    //     cardBack1: this.state.value1
+    //   })
+    // }
+
     toggleFlip1() {
       this.setState({card1: "card1 flipped"});
       if (this.state.props[this.state.characterIdx].eChar === this.state.value1.eChar) {
-      setTimeout(() => { this.correctAnswer(); }, 1250);
+        setTimeout(() => { this.correctAnswer(); }, 1250);
       }
     }
 
@@ -100,6 +112,7 @@ export default class QuizStudy extends React.Component {
 
     shuffle(arr) {
       // this is the Fisher Yates algorithm
+      // the four unique cards are shuffled
       for (var i = arr.length - 1; i > 0; i--) {
           var j = Math.floor(Math.random() * (i + 1));
           var temp = arr[i];
@@ -112,8 +125,21 @@ export default class QuizStudy extends React.Component {
         value3: arr[2],
         value4: arr[3]
       });
+
+      setTimeout(() => {this.cardBack(); }, 500);
     }
 
+    // specifically updates the backs of each card; not directly
+    // linked to the front of the cards now
+    cardBack() {
+      this.setState({
+        cardBack1: this.markDecider(this.state.value1.eChar),
+        cardBack2: this.markDecider(this.state.value2.eChar),
+        cardBack3: this.markDecider(this.state.value3.eChar),
+        cardBack4: this.markDecider(this.state.value4.eChar)
+
+      });
+    }
 
     uniqueCards(arr) {
 
@@ -134,6 +160,9 @@ export default class QuizStudy extends React.Component {
     // setTimeout(() => {
     //   this.markDecider(cardBack); }, 5000);
 
+    // one possible idea to fix the issue with updating too quickly:
+    // have this linked to state, and update the state with a setTimeout
+    // function (downside is the state gets even bigger)
     markDecider(cardFace) {
       if (this.state.props[this.state.characterIdx].eChar === cardFace) {
         return ("O");
@@ -144,8 +173,11 @@ export default class QuizStudy extends React.Component {
     // setTimeout(() => {
     //   this.markDecider(cardBack); }, 5000);
 
-    render() {
 
+    render() {
+      // the backs of the cards are directly linked to the front of the
+      // cards; when the front is reset, the back instaly resets as well
+      // we need to decouple them in the state
       return(
         <div className="splashScreen">
 
@@ -166,15 +198,16 @@ export default class QuizStudy extends React.Component {
 
              <div className={this.state.card1} onClick={this.toggleFlip1}>
                <div className="card1 front">{this.state.value1.eChar}</div>
-               <div className={`card1 back ` + this.markDecider(this.state.value1.eChar)}>
-                    {this.markDecider(this.state.value1.eChar)}</div>
+                <div className={`card1 back ` + this.state.cardBack1}>
+                     {this.state.cardBack1}</div>
+
              </div>
 
 
             <div className={this.state.card2} onClick={this.toggleFlip2}>
               <div className="card2 front">{this.state.value2.eChar}</div>
-              <div className={`card2 back ` + this.markDecider(this.state.value2.eChar)}>
-                    {this.markDecider(this.state.value2.eChar)}</div>
+              <div className={`card2 back ` + this.state.cardBack2}>
+                    {this.state.cardBack2}</div>
             </div>
 
            </div>
@@ -187,14 +220,14 @@ export default class QuizStudy extends React.Component {
 
           <div className={this.state.card3} onClick={this.toggleFlip3}>
             <div className="card3 front">{this.state.value3.eChar}</div>
-            <div className={`card3 back ` + this.markDecider(this.state.value3.eChar)}>
-                    {this.markDecider(this.state.value3.eChar)}</div>
+            <div className={`card3 back ` + this.state.cardBack3}>
+                    {this.state.cardBack3}</div>
           </div>
 
           <div className={this.state.card4} onClick={this.toggleFlip4}>
             <div className="card4 front">{this.state.value4.eChar}</div>
-            <div className={`card4 back ` + this.markDecider(this.state.value4.eChar)}>
-                    {this.markDecider(this.state.value4.eChar)}</div>
+            <div className={`card4 back ` + this.state.cardBack4}>
+                    {this.state.cardBack4}</div>
           </div>
 
         </div>

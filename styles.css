@@ -134,17 +134,22 @@ button:focus {
   padding-top: 25px;
 }
 
+
+
+
 .cardContainerTop {
-  width: 225px;
+  width: 350px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+
 }
 
 
 .cardContainerBottom {
   width: 225px;
   display: flex;
-  justify-content: space-between;;
+  justify-content: space-between;
 }
 
 

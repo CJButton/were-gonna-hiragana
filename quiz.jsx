@@ -19,20 +19,17 @@ export default class QuizStudy extends React.Component {
         card1: "card1",
         card2: "card2",
         card3: "card3",
-        card4: "card4",
         value1: "",
         value2: "",
         value3: "",
-        value4: "",
         cardBack1: "",
         cardBack2: "",
-        cardBack3: "",
-        cardBack4: ""
+        cardBack3: ""
       };
       this.toggleFlip1 = this.toggleFlip1.bind(this);
       this.toggleFlip2 = this.toggleFlip2.bind(this);
       this.toggleFlip3 = this.toggleFlip3.bind(this);
-      this.toggleFlip4 = this.toggleFlip4.bind(this);
+      // this.toggleFlip4 = this.toggleFlip4.bind(this);
     }
 
     // in es6, we need to use componentWillReceiveProps
@@ -64,8 +61,7 @@ export default class QuizStudy extends React.Component {
           characterIdx: newIdx,
           card1: "card1",
           card2: "card2",
-          card3: "card3",
-          card4: "card4"
+          card3: "card3"
         });
 
         this.uniqueCards(this.state.props);
@@ -103,12 +99,12 @@ export default class QuizStudy extends React.Component {
       }
     }
 
-    toggleFlip4() {
-      this.setState({card4: "card4 flipped"});
-      if (this.state.props[this.state.characterIdx].eChar === this.state.value4.eChar) {
-        setTimeout(() => {this.correctAnswer(); }, 1250);
-      }
-    }
+    // toggleFlip4() {
+    //   this.setState({card4: "card4 flipped"});
+    //   if (this.state.props[this.state.characterIdx].eChar === this.state.value4.eChar) {
+    //     setTimeout(() => {this.correctAnswer(); }, 1250);
+    //   }
+    // }
 
     shuffle(arr) {
       // this is the Fisher Yates algorithm
@@ -122,8 +118,7 @@ export default class QuizStudy extends React.Component {
       this.setState({
         value1: arr[0],
         value2: arr[1],
-        value3: arr[2],
-        value4: arr[3]
+        value3: arr[2]
       });
 
       setTimeout(() => {this.cardBack(); }, 500);
@@ -135,8 +130,8 @@ export default class QuizStudy extends React.Component {
       this.setState({
         cardBack1: this.markDecider(this.state.value1.eChar),
         cardBack2: this.markDecider(this.state.value2.eChar),
-        cardBack3: this.markDecider(this.state.value3.eChar),
-        cardBack4: this.markDecider(this.state.value4.eChar)
+        cardBack3: this.markDecider(this.state.value3.eChar)
+        // cardBack4: this.markDecider(this.state.value4.eChar)
 
       });
     }
@@ -146,7 +141,7 @@ export default class QuizStudy extends React.Component {
       let cardArray = [];
       let nums = [this.state.characterIdx];
       cardArray.push(arr[this.state.characterIdx]);
-      while (nums.length < 4) {
+      while (nums.length < 3) {
         let int = Math.floor((Math.random() * arr.length));
 
         if (!nums.includes(int)) {
@@ -203,11 +198,16 @@ export default class QuizStudy extends React.Component {
 
              </div>
 
-
             <div className={this.state.card2} onClick={this.toggleFlip2}>
               <div className="card2 front">{this.state.value2.eChar}</div>
               <div className={`card2 back ` + this.state.cardBack2}>
                     {this.state.cardBack2}</div>
+            </div>
+
+            <div className={this.state.card3} onClick={this.toggleFlip3}>
+              <div className="card3 front">{this.state.value3.eChar}</div>
+              <div className={`card3 back ` + this.state.cardBack3}>
+                {this.state.cardBack3}</div>
             </div>
 
            </div>
@@ -218,17 +218,6 @@ export default class QuizStudy extends React.Component {
 
         <div className="cardContainerBottom">
 
-          <div className={this.state.card3} onClick={this.toggleFlip3}>
-            <div className="card3 front">{this.state.value3.eChar}</div>
-            <div className={`card3 back ` + this.state.cardBack3}>
-                    {this.state.cardBack3}</div>
-          </div>
-
-          <div className={this.state.card4} onClick={this.toggleFlip4}>
-            <div className="card4 front">{this.state.value4.eChar}</div>
-            <div className={`card4 back ` + this.state.cardBack4}>
-                    {this.state.cardBack4}</div>
-          </div>
 
         </div>
         </div>

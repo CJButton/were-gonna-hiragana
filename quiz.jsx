@@ -72,12 +72,6 @@ export default class QuizStudy extends React.Component {
       }
     }
 
-    // cardBack() {
-    //   this.setState({
-    //     cardBack1: this.state.value1
-    //   })
-    // }
-
     toggleFlip1() {
       this.setState({card1: "card1 flipped"});
       if (this.state.props[this.state.characterIdx].eChar === this.state.value1.eChar) {
@@ -98,13 +92,6 @@ export default class QuizStudy extends React.Component {
         setTimeout(() => {this.correctAnswer(); }, 1250);
       }
     }
-
-    // toggleFlip4() {
-    //   this.setState({card4: "card4 flipped"});
-    //   if (this.state.props[this.state.characterIdx].eChar === this.state.value4.eChar) {
-    //     setTimeout(() => {this.correctAnswer(); }, 1250);
-    //   }
-    // }
 
     shuffle(arr) {
       // this is the Fisher Yates algorithm
@@ -184,8 +171,9 @@ export default class QuizStudy extends React.Component {
                src={this.state.props[this.state.characterIdx].jChar} />
           </div>
 
-          {this.state.showLink ? <Link to={`/` + this.state.next}>
-            <button>Next Quiz!</button></Link>: null}
+          {this.state.showLink ? <Link className="nextQuizLink"
+            to={`/` + this.state.next}>
+            <button className="nextQuizButton">Next Quiz!</button></Link>: null}
 
           <div className="quizTop">
 

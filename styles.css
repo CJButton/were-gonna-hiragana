@@ -35,6 +35,17 @@ html {
   position: absolute;
   z-index: 0;
   background-color: red;
+  animation: rising 5s;
+}
+
+@keyframes rising {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(150px, 150px);
+  }
 }
 
 .splashText {
@@ -121,9 +132,42 @@ button:focus {
   height: 300px;
 }
 
+.nextQuizLink {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  z-index: 1;
+  background-color: red;
+  background: red;
+  color: white;
+  border: none;
+  margin-top: 168px;
+  margin-left: 400px;
+  height: 30px;
+  width: 100px;
+}
 
+.nextQuizButton {
+  padding-left: 9px;
+  background: red;
+  background-color: red;
+  border: none;
+  color: white;
+  width: 100px;
+}
+
+.quizToLink {
+  padding-left: 9px;
+  margin-left: 400px;
+  background: red;
+  background-color: red;
+  border: none;
+  color: white;
+  width: 130px;
+}
 
 .quizTop {
+  margin-top: 50px;
   display: flex;
   justify-content: center;
 }

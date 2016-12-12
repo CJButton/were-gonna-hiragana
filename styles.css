@@ -175,6 +175,15 @@ button:focus {
   margin-left: 220px;
 }
 
+li.charIdx.chars {
+  margin-top: 10px;
+  font-size: 28px;
+}
+
+.charIdx {
+  list-style: none;
+}
+
 .index-img {
   width: 58px;
   height: 58px;
@@ -243,9 +252,7 @@ button:focus {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
-
 
 .cardContainerBottom {
   width: 225px;
@@ -259,9 +266,6 @@ button:focus {
   height: 100px;
   transition: transform 1s;
   transform-style: preserve-3d;
-  /*animation: flipper 2s infinite;*/
-  /*animation-direction: alternate;*/
-  /*background-color: red*/
 }
 
 .card1 div {
@@ -274,15 +278,6 @@ button:focus {
   position: absolute;
   backface-visibility: hidden;
 }
-
-/*.card1 .front {
-  background: purple;
-}
-
-.card1 .back {
-  background: blue;
-  transform: rotateY(180deg);
-}*/
 
 .card1.flipped {
   transform: rotateY(180deg);

@@ -36,9 +36,9 @@ export default class QuizStudy extends React.Component {
             </div>
               {characters.map((line, idx) => (
             <ul key={idx} className="charIndex">
-              <img className="index-img" src={line.jChar}></img>
-              <p>{line.eChar}</p>
-              <p className="charPro">{line.pChar}</p>
+              <li className="charIdx"><img className="index-img" src={line.jChar}></img></li>
+              <li className="charIdx chars">{line.eChar}</li>
+              <li className="charIdx chars">{line.pChar}</li>
             </ul>
               ))}
           </div>

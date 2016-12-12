@@ -3,7 +3,7 @@
 .logo {
   display: flex;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: 180px;
   margin-top: 0px;
 }
 
@@ -41,8 +41,8 @@ html {
   width: 800px;
   height: 205px;
   border: solid 2px #000;
-  border-color:#000 transparent transparent transparent;
-  border-radius: 50%/100px 100px 0 0;
+  border-color:#000 #000 #000 #000;
+  border-radius: 55%/155px 155px 0 0;
   position: absolute;
   padding-left: 96px;
   margin-top: 391px;

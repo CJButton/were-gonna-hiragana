@@ -164,12 +164,19 @@ button:focus {
 }
 
 .titleRoma {
-  margin-left:  250px;
+  margin-left:  245px;
 }
+
+
+
 
 .titleHira {
   margin-left: 135px;
 }
+
+
+
+
 
 .titlePro {
   margin-left: 220px;
@@ -178,10 +185,57 @@ button:focus {
 li.charIdx.chars {
   margin-top: 10px;
   font-size: 28px;
+  /*opacity: 0;*/
 }
 
-.charIdx {
+li.charIdx {
   list-style: none;
+}
+
+.line0 {
+  animation: cascading 2s;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.line1 {
+  animation: cascading 2s;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.line2 {
+  animation: cascading 2s;
+  animation-delay: 0.7s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.line3 {
+  animation: cascading 2s;
+  animation-delay: 1.0s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.line4 {
+  animation: cascading 2s;
+  animation-delay: 1.3s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes cascading {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }
 
 .index-img {
@@ -196,7 +250,19 @@ li.charIdx.chars {
 
 .quizChar {
   height: 300px;
+  animation: fadeInLeft 2s;
 }
+/*
+@keyframes fadeInLeft{
+  0% {
+      opacity: 0;
+      transform: translateX(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}*/
 
 .nextQuizLink {
   display: flex;
@@ -248,7 +314,7 @@ li.charIdx.chars {
 
 
 .cardContainerTop {
-  width: 350px;
+  width: 430px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -262,7 +328,7 @@ li.charIdx.chars {
 
 
 .card1 {
-  width: 100px;
+  width: 130px;
   height: 100px;
   transition: transform 1s;
   transform-style: preserve-3d;
@@ -288,7 +354,7 @@ li.charIdx.chars {
 
 
 .card2 {
-  width: 100px;
+  width: 130px;
   height: 100px;
   transition: transform 1s;
   transform-style: preserve-3d;
@@ -327,7 +393,7 @@ li.charIdx.chars {
 
 
 .card3 {
-  width: 100px;
+  width: 130px;
   height: 100px;
   transition: transform 1s;
   transform-style: preserve-3d;
@@ -383,7 +449,7 @@ li.charIdx.chars {
 }
 
 .front {
-  background: pink;
+  background: blue;
 }
 
 .back {

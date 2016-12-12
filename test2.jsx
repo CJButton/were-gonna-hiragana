@@ -4,6 +4,7 @@
 import { Router, Route, Link, browserHistory } from 'react-router';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ReactTooltip from 'react-tooltip';
 
 
 export default class QuizStudy extends React.Component {
@@ -30,18 +31,43 @@ export default class QuizStudy extends React.Component {
 
           <div>
             <div className="titlesIndex">
-              <p className="titleHira">Hiragana</p>
-              <p className="titleRoma">Romaji</p>
-              <p className="titlePro">Pronunciation</p>
+
+              <p data-tip data-for='titleHira' className="titleHira">Hiragana</p>
+
+              <p data-tip data-for="titleRomaji" className="titleRoma">Romaji</p>
+              <p data-tip data-for="titlePronun"
+                className="titlePro">Pronunciation</p>
+
             </div>
               {characters.map((line, idx) => (
-            <ul key={idx} className="charIndex">
-              <li className="charIdx"><img className="index-img" src={line.jChar}></img></li>
-              <li className="charIdx chars">{line.eChar}</li>
-              <li className="charIdx chars">{line.pChar}</li>
+
+            <ul key={idx} className={`charIndex ` + `line` + idx}>
+              <li data-tip data-for='titleHira' className="charIdx hira">
+                <img className="index-img" src={line.jChar}></img></li>
+
+              <li data-tip data-for="titleRomaji"
+                className="charIdx chars romaji">{line.eChar}</li>
+
+              <li data-tip data-for="titlePronun"
+                className="charIdx chars pro">{line.pChar}</li>
             </ul>
               ))}
           </div>
+
+          <ReactTooltip id='titleHira' type='info'>
+            <span>These are hiragana.<br></br>
+          Memorize these characters along<br></br> with their Romaji readings.</span>
+          </ReactTooltip>
+
+          <ReactTooltip id="titleRomaji" type='info'>
+            <span>This is how the hiragana
+              character <br></br>is written using English letters.</span>
+          </ReactTooltip>
+
+          <ReactTooltip id="titlePronun" type='info'>
+            <span>This is how the hiragana
+              character <br></br>is pronounced!</span>
+          </ReactTooltip>
 
           <Link className="quizLink"
                 to={`/` + this.props.route.path + `/quiz`}>
@@ -53,3 +79,5 @@ export default class QuizStudy extends React.Component {
       );
     }
 }
+
+// className="charIndex"

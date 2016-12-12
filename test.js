@@ -34,11 +34,14 @@ export default class Tester extends React.Component {
           <div className="splashScreen" onClick={this.dropdownCollapse}>
           <div className="sun"></div>
           <div className="curve">
+          <h3 className="splashTextTop">Learn to read Japanese!</h3>
           <p className="splashText">
-          Japanese is a notoriously diffiult langauge to read and write. There are three scripts: kanji (characters of Chinese origin), katakana (sharp characters, usually used for foreign words, and hiragana (rounded characters, used with kanji to make words and phrases). After mastering hiragana, you&#39;ll be able to not only survive, but start to gain an understanding of Japan!
-          </p>
-          </div>
-            <h2 className="logo">We&#39;re gonna (learn) Hiragana!</h2>
+            Visiting Japan? Business? Have an interest in anime or manga? Or maybe just want to learn a fascinating language? Then you will want to learn 'hiragana'!
+            After learning these characters, you can understand signs, menus, and have a greater experience while in Japan! Let&#39;s get started!
+          </p></div>
+            <div className="logoContainer">
+              <h2 className="logo">We&#39;re gonna (learn) Hiragana!</h2>
+            </div>
 
             <div className="dropdown-Container">
               <div className="dropdown-List">
@@ -51,3 +54,6 @@ export default class Tester extends React.Component {
       );
     }
 }
+
+// <div className="splashHi">
+// <img className="splashHi2" src="http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479352414/ka_uocs0v.png"></img></div>

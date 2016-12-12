@@ -38,14 +38,14 @@ html {
 }
 
 .curve {
-  width:800px;
-  height:273px;
+  width: 800px;
+  height: 205px;
   border: solid 2px #000;
   border-color:#000 transparent transparent transparent;
   border-radius: 50%/100px 100px 0 0;
   position: absolute;
-  padding-left: 90px;
-  margin-top: 300px;
+  padding-left: 96px;
+  margin-top: 391px;
   background-color: white;
   z-index: 1
 }
@@ -53,27 +53,25 @@ html {
 .sun {
   border-color: black;
 	border-radius: 50%;
-	width: 200px;
-	height: 200px;
-  margin-top: 350px;
-  margin-left: 55px;
+	width: 165px;
+	height: 165px;
+  margin-top: 430px;
+  margin-left: 70px;
   position: absolute;
   z-index: 0;
   background-color: red;
-  animation: rising 5s;
-  animation-delay: 2.5s;
+  animation: rising 3.5s;
+  animation-delay: 2.2s;
   animation-fill-mode: forwards;
 }
 
 @keyframes rising {
   0% {
-    transform: translate(0, 0);
-    z-index: 0;
+    transform: translate(0, 0) scale3d(.3, .3, .3);
   }
 
   100% {
-    transform: translate(0, -150px);
-    z-index: 0
+    transform: translate(0, -120px) scale3d(1.2, 1.2, 1.2);
   }
 }
 
@@ -115,6 +113,7 @@ html {
   background-color: white;
   height: 600px;
   width: 900px;
+  background-image: url("images/fuji2.jpg");
 }
 
 .charIndex {

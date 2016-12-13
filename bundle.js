@@ -28449,32 +28449,28 @@
 	              'div',
 	              { className: 'pointsCounter' },
 	              _react2.default.createElement(
-	                'div',
+	                'p',
 	                null,
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  'Number Questions: ',
-	                  this.state.props.length
-	                ),
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  'Total Correct: ',
-	                  this.state.correct
-	                ),
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  'Guesses Made: ',
-	                  this.state.guesses
-	                ),
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  'Percentage: ',
-	                  this.state.percentage
-	                )
+	                'Number Questions: ',
+	                this.state.props.length
+	              ),
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                'Total Correct: ',
+	                this.state.correct
+	              ),
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                'Guesses Made: ',
+	                this.state.guesses
+	              ),
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                'Percentage: ',
+	                this.state.percentage
 	              )
 	            )
 	          ),

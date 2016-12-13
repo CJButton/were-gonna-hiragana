@@ -62,7 +62,7 @@ html {
   z-index: 0;
   background-color: red;
   animation: rising 3.5s;
-  animation-delay: 2.2s;
+  animation-delay: 1.8s;
   animation-fill-mode: forwards;
 }
 
@@ -299,7 +299,7 @@ li.charIdx {
 }
 
 .quizImageArea {
-  padding-right: 100px;
+  padding-right: 90px;
 
 }
 
@@ -578,9 +578,21 @@ li.charIdx {
 }
 
 .pointsCounter {
-  height: 200px;
-  width: 200px;
-  background-color: orange;
+  color: white;
+  height: 150px;
+  width: 163px;
+  background-color: red;
+  border-radius: 25px;
+  margin-right: 50px;
+  margin-top: 30px;
+  padding-top: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pointsCounter p {
+  margin-bottom: 0px;
+  padding-left: 15px;
 }
 
 

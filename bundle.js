@@ -28293,6 +28293,7 @@
 	        this.uniqueCards(this.state.props);
 	      } else if (newIdx >= this.state.props.length) {
 	        this.setState({
+	          correct: newCorrect,
 	          showLink: true
 	        });
 	      }
@@ -28300,64 +28301,70 @@
 	  }, {
 	    key: 'guessMade',
 	    value: function guessMade() {
+	      var _this2 = this;
+	
 	      var newGuesses = this.state.guesses + 1;
 	
 	      this.setState({
 	        guesses: newGuesses
 	      });
+	      setTimeout(function () {
+	        _this2.guessPercentage();
+	      }, 2000);
 	    }
 	  }, {
 	    key: 'guessPercentage',
 	    value: function guessPercentage() {
-	      var newPercentage = this.state.guesses / this.state.correct;
+	      var newPercentage = this.state.correct / this.state.guesses * 100;
 	
+	      console.log(newPercentage);
 	      this.setState({
-	        percentage: newPercentage
+	        percentage: newPercentage.toPrecision(3)
 	      });
 	    }
 	  }, {
 	    key: 'toggleFlip1',
 	    value: function toggleFlip1() {
-	      var _this2 = this;
+	      var _this3 = this;
 	
 	      this.setState({ card1: "card1 flipped" });
 	      this.guessMade();
 	      if (this.state.props[this.state.characterIdx].eChar === this.state.value1.eChar) {
-	        setTimeout(function () {
-	          _this2.correctAnswer();
-	        }, 1250);
-	      }
-	    }
-	  }, {
-	    key: 'toggleFlip2',
-	    value: function toggleFlip2() {
-	      var _this3 = this;
-	
-	      this.setState({ card2: "card2 flipped" });
-	      this.guessMade();
-	      if (this.state.props[this.state.characterIdx].eChar === this.state.value2.eChar) {
 	        setTimeout(function () {
 	          _this3.correctAnswer();
 	        }, 1250);
 	      }
 	    }
 	  }, {
-	    key: 'toggleFlip3',
-	    value: function toggleFlip3() {
+	    key: 'toggleFlip2',
+	    value: function toggleFlip2() {
 	      var _this4 = this;
 	
-	      this.setState({ card3: "card3 flipped" });
+	      this.setState({ card2: "card2 flipped" });
 	      this.guessMade();
-	      if (this.state.props[this.state.characterIdx].eChar === this.state.value3.eChar) {
+	      if (this.state.props[this.state.characterIdx].eChar === this.state.value2.eChar) {
 	        setTimeout(function () {
 	          _this4.correctAnswer();
 	        }, 1250);
 	      }
 	    }
 	  }, {
+	    key: 'toggleFlip3',
+	    value: function toggleFlip3() {
+	      var _this5 = this;
+	
+	      this.setState({ card3: "card3 flipped" });
+	      this.guessMade();
+	      if (this.state.props[this.state.characterIdx].eChar === this.state.value3.eChar) {
+	        setTimeout(function () {
+	          _this5.correctAnswer();
+	        }, 1250);
+	      }
+	    }
+	  }, {
 	    key: 'shuffle',
 	    value: function shuffle(arr) {
-	      var _this5 = this;
+	      var _this6 = this;
 	
 	      // this is the Fisher Yates algorithm
 	      // the four unique cards are shuffled
@@ -28374,7 +28381,7 @@
 	      });
 	
 	      setTimeout(function () {
-	        _this5.cardBack();
+	        _this6.cardBack();
 	      }, 500);
 	    }
 	

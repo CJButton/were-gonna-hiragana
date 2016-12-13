@@ -73,6 +73,7 @@ export default class QuizStudy extends React.Component {
         this.uniqueCards(this.state.props);
       } else if (newIdx >= this.state.props.length) {
         this.setState({
+          correct: newCorrect,
           showLink: true
         });
       }
@@ -84,13 +85,15 @@ export default class QuizStudy extends React.Component {
       this.setState({
         guesses: newGuesses
       });
+      setTimeout(() => {this.guessPercentage(); }, 2000);
     }
 
     guessPercentage() {
-      let newPercentage = this.state.guesses / this.state.correct;
+      let newPercentage = (this.state.correct / this.state.guesses) * 100;
 
+      console.log(newPercentage);
       this.setState({
-        percentage: newPercentage
+        percentage: newPercentage.toPrecision(3)
       });
     }
 

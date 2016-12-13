@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import Kana from './kanadata';
 import Tester from './test';
@@ -44,7 +44,7 @@ var routes = (
 // this will replace the current element with whatever we define in Root
 document.addEventListener('DOMContentLoaded', function() {
   ReactDOM.render(
-    <Router history={browserHistory}>
+    <Router history={hashHistory}>
       {routes}
     </Router>,
       document.getElementById('root'));

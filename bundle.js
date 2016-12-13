@@ -68,7 +68,7 @@
 	
 	var _test4 = _interopRequireDefault(_test3);
 	
-	var _quiz = __webpack_require__(237);
+	var _quiz = __webpack_require__(248);
 	
 	var _quiz2 = _interopRequireDefault(_quiz);
 	
@@ -26736,7 +26736,7 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _reactTooltip = __webpack_require__(238);
+	var _reactTooltip = __webpack_require__(237);
 	
 	var _reactTooltip2 = _interopRequireDefault(_reactTooltip);
 	
@@ -26892,327 +26892,6 @@
 
 	'use strict';
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _kanadata = __webpack_require__(233);
-	
-	var _kanadata2 = _interopRequireDefault(_kanadata);
-	
-	var _reactRouter = __webpack_require__(178);
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactDom = __webpack_require__(32);
-	
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	// card1 toggles card to flip/unflip
-	// value1 stores current cards object
-	// cardBack1 is specifically the
-	var QuizStudy = function (_React$Component) {
-	  _inherits(QuizStudy, _React$Component);
-	
-	  function QuizStudy(props) {
-	    _classCallCheck(this, QuizStudy);
-	
-	    var _this = _possibleConstructorReturn(this, (QuizStudy.__proto__ || Object.getPrototypeOf(QuizStudy)).call(this, props));
-	
-	    _this.state = {
-	      characterIdx: 0,
-	      showLink: false,
-	      card1: "card1",
-	      card2: "card2",
-	      card3: "card3",
-	      value1: "",
-	      value2: "",
-	      value3: "",
-	      cardBack1: "",
-	      cardBack2: "",
-	      cardBack3: ""
-	    };
-	    _this.toggleFlip1 = _this.toggleFlip1.bind(_this);
-	    _this.toggleFlip2 = _this.toggleFlip2.bind(_this);
-	    _this.toggleFlip3 = _this.toggleFlip3.bind(_this);
-	    // this.toggleFlip4 = this.toggleFlip4.bind(this);
-	    return _this;
-	  }
-	
-	  // in es6, we need to use componentWillReceiveProps
-	  // this needs to set the randomized cards as well
-	
-	
-	  _createClass(QuizStudy, [{
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {
-	      var kana = new _kanadata2.default();
-	      var characterSetName = this.props.route.path.slice(0, -5);
-	      // wow! this is worth writing about in our production readme as
-	      // a very interesting point!
-	      var characterSet = kana[characterSetName]();
-	      var charactersArray = Object.keys(characterSet).map(function (key) {
-	        return characterSet[key];
-	      });
-	
-	      var nextGroup = charactersArray.pop();
-	
-	      this.setState({ props: charactersArray,
-	        next: nextGroup });
-	      this.uniqueCards(charactersArray);
-	    }
-	  }, {
-	    key: 'correctAnswer',
-	    value: function correctAnswer() {
-	      var newIdx = this.state.characterIdx + 1;
-	
-	      if (newIdx < this.state.props.length) {
-	
-	        // turns all of the cards back over to show the face
-	        this.setState({
-	          characterIdx: newIdx,
-	          card1: "card1",
-	          card2: "card2",
-	          card3: "card3"
-	        });
-	
-	        this.uniqueCards(this.state.props);
-	      } else if (newIdx >= this.state.props.length) {
-	        this.setState({
-	          showLink: true
-	        });
-	      }
-	    }
-	  }, {
-	    key: 'toggleFlip1',
-	    value: function toggleFlip1() {
-	      var _this2 = this;
-	
-	      this.setState({ card1: "card1 flipped" });
-	      if (this.state.props[this.state.characterIdx].eChar === this.state.value1.eChar) {
-	        setTimeout(function () {
-	          _this2.correctAnswer();
-	        }, 1250);
-	      }
-	    }
-	  }, {
-	    key: 'toggleFlip2',
-	    value: function toggleFlip2() {
-	      var _this3 = this;
-	
-	      this.setState({ card2: "card2 flipped" });
-	      if (this.state.props[this.state.characterIdx].eChar === this.state.value2.eChar) {
-	        setTimeout(function () {
-	          _this3.correctAnswer();
-	        }, 1250);
-	      }
-	    }
-	  }, {
-	    key: 'toggleFlip3',
-	    value: function toggleFlip3() {
-	      var _this4 = this;
-	
-	      this.setState({ card3: "card3 flipped" });
-	      if (this.state.props[this.state.characterIdx].eChar === this.state.value3.eChar) {
-	        setTimeout(function () {
-	          _this4.correctAnswer();
-	        }, 1250);
-	      }
-	    }
-	  }, {
-	    key: 'shuffle',
-	    value: function shuffle(arr) {
-	      var _this5 = this;
-	
-	      // this is the Fisher Yates algorithm
-	      // the four unique cards are shuffled
-	      for (var i = arr.length - 1; i > 0; i--) {
-	        var j = Math.floor(Math.random() * (i + 1));
-	        var temp = arr[i];
-	        arr[i] = arr[j];
-	        arr[j] = temp;
-	      }
-	      this.setState({
-	        value1: arr[0],
-	        value2: arr[1],
-	        value3: arr[2]
-	      });
-	
-	      setTimeout(function () {
-	        _this5.cardBack();
-	      }, 500);
-	    }
-	
-	    // specifically updates the backs of each card; not directly
-	    // linked to the front of the cards now
-	
-	  }, {
-	    key: 'cardBack',
-	    value: function cardBack() {
-	      this.setState({
-	        cardBack1: this.markDecider(this.state.value1.eChar),
-	        cardBack2: this.markDecider(this.state.value2.eChar),
-	        cardBack3: this.markDecider(this.state.value3.eChar)
-	        // cardBack4: this.markDecider(this.state.value4.eChar)
-	
-	      });
-	    }
-	  }, {
-	    key: 'uniqueCards',
-	    value: function uniqueCards(arr) {
-	
-	      var cardArray = [];
-	      var nums = [this.state.characterIdx];
-	      cardArray.push(arr[this.state.characterIdx]);
-	      while (nums.length < 3) {
-	        var int = Math.floor(Math.random() * arr.length);
-	
-	        if (!nums.includes(int)) {
-	          nums.push(int);
-	          cardArray.push(arr[int]);
-	        }
-	      }
-	      this.shuffle(cardArray);
-	    }
-	
-	    // setTimeout(() => {
-	    //   this.markDecider(cardBack); }, 5000);
-	
-	    // one possible idea to fix the issue with updating too quickly:
-	    // have this linked to state, and update the state with a setTimeout
-	    // function (downside is the state gets even bigger)
-	
-	  }, {
-	    key: 'markDecider',
-	    value: function markDecider(cardFace) {
-	      if (this.state.props[this.state.characterIdx].eChar === cardFace) {
-	        return "O";
-	      } else {
-	        return "X";
-	      }
-	    }
-	    // setTimeout(() => {
-	    //   this.markDecider(cardBack); }, 5000);
-	
-	
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      // the backs of the cards are directly linked to the front of the
-	      // cards; when the front is reset, the back instaly resets as well
-	      // we need to decouple them in the state
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'splashScreen' },
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { className: 'splashLink', to: '/' },
-	          _react2.default.createElement(
-	            'button',
-	            { className: 'splashButton' },
-	            'Back to Index'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'quizImageArea' },
-	          _react2.default.createElement('img', { className: 'quizChar',
-	            src: this.state.props[this.state.characterIdx].jChar })
-	        ),
-	        this.state.showLink ? _react2.default.createElement(
-	          _reactRouter.Link,
-	          { className: 'nextQuizLink',
-	            to: '/' + this.state.next },
-	          _react2.default.createElement(
-	            'button',
-	            { className: 'nextQuizButton' },
-	            'Next Quiz!'
-	          )
-	        ) : null,
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'quizTop' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'cardContainerTop' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: this.state.card1, onClick: this.toggleFlip1 },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'card1 front' },
-	                this.state.value1.eChar
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'card1 back ' + this.state.cardBack1 },
-	                this.state.cardBack1
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: this.state.card2, onClick: this.toggleFlip2 },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'card2 front' },
-	                this.state.value2.eChar
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'card2 back ' + this.state.cardBack2 },
-	                this.state.cardBack2
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: this.state.card3, onClick: this.toggleFlip3 },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'card3 front' },
-	                this.state.value3.eChar
-	              ),
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'card3 back ' + this.state.cardBack3 },
-	                this.state.cardBack3
-	              )
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'quizBottom' },
-	          _react2.default.createElement('div', { className: 'cardContainerBottom' })
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return QuizStudy;
-	}(_react2.default.Component);
-	// <div className="card1 back"></div>
-	
-	
-	exports.default = QuizStudy;
-
-/***/ },
-/* 238 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -27236,37 +26915,37 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _classnames = __webpack_require__(239);
+	var _classnames = __webpack_require__(238);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _staticMethods = __webpack_require__(240);
+	var _staticMethods = __webpack_require__(239);
 	
 	var _staticMethods2 = _interopRequireDefault(_staticMethods);
 	
-	var _windowListener = __webpack_require__(242);
+	var _windowListener = __webpack_require__(241);
 	
 	var _windowListener2 = _interopRequireDefault(_windowListener);
 	
-	var _customEvent = __webpack_require__(243);
+	var _customEvent = __webpack_require__(242);
 	
 	var _customEvent2 = _interopRequireDefault(_customEvent);
 	
-	var _isCapture = __webpack_require__(244);
+	var _isCapture = __webpack_require__(243);
 	
 	var _isCapture2 = _interopRequireDefault(_isCapture);
 	
-	var _getPosition = __webpack_require__(245);
+	var _getPosition = __webpack_require__(244);
 	
 	var _getPosition2 = _interopRequireDefault(_getPosition);
 	
-	var _getTipContent = __webpack_require__(246);
+	var _getTipContent = __webpack_require__(245);
 	
 	var _getTipContent2 = _interopRequireDefault(_getTipContent);
 	
-	var _aria = __webpack_require__(247);
+	var _aria = __webpack_require__(246);
 	
-	var _style = __webpack_require__(248);
+	var _style = __webpack_require__(247);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
@@ -27782,7 +27461,7 @@
 	module.exports = ReactTooltip;
 
 /***/ },
-/* 239 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -27836,7 +27515,7 @@
 
 
 /***/ },
-/* 240 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27894,7 +27573,7 @@
 	  };
 	};
 	
-	var _constant = __webpack_require__(241);
+	var _constant = __webpack_require__(240);
 	
 	var _constant2 = _interopRequireDefault(_constant);
 	
@@ -27919,7 +27598,7 @@
 	    */
 
 /***/ },
-/* 241 */
+/* 240 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -27937,7 +27616,7 @@
 	};
 
 /***/ },
-/* 242 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27983,14 +27662,14 @@
 	  };
 	};
 	
-	var _constant = __webpack_require__(241);
+	var _constant = __webpack_require__(240);
 	
 	var _constant2 = _interopRequireDefault(_constant);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 243 */
+/* 242 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28083,7 +27762,7 @@
 	var customListener = void 0;
 
 /***/ },
-/* 244 */
+/* 243 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28100,7 +27779,7 @@
 	};
 
 /***/ },
-/* 245 */
+/* 244 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28418,7 +28097,7 @@
 	};
 
 /***/ },
-/* 246 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28455,7 +28134,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 247 */
+/* 246 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -28484,7 +28163,7 @@
 	}
 
 /***/ },
-/* 248 */
+/* 247 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28493,6 +28172,327 @@
 	  value: true
 	});
 	exports.default = '.__react_component_tooltip{border-radius:3px;display:inline-block;font-size:13px;left:-999em;opacity:0;padding:8px 21px;position:fixed;pointer-events:none;transition:opacity 0.3s ease-out;top:-999em;visibility:hidden;z-index:999}.__react_component_tooltip:before,.__react_component_tooltip:after{content:"";width:0;height:0;position:absolute}.__react_component_tooltip.show{opacity:0.9;margin-top:0px;margin-left:0px;visibility:visible}.__react_component_tooltip.type-dark{color:#fff;background-color:#222}.__react_component_tooltip.type-dark.place-top:after{border-top-color:#222;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-dark.place-bottom:after{border-bottom-color:#222;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-dark.place-left:after{border-left-color:#222;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-dark.place-right:after{border-right-color:#222;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-dark.border{border:1px solid #fff}.__react_component_tooltip.type-dark.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-dark.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-dark.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-dark.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-success{color:#fff;background-color:#8DC572}.__react_component_tooltip.type-success.place-top:after{border-top-color:#8DC572;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-success.place-bottom:after{border-bottom-color:#8DC572;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-success.place-left:after{border-left-color:#8DC572;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-success.place-right:after{border-right-color:#8DC572;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-success.border{border:1px solid #fff}.__react_component_tooltip.type-success.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-success.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-success.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-success.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-warning{color:#fff;background-color:#F0AD4E}.__react_component_tooltip.type-warning.place-top:after{border-top-color:#F0AD4E;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-warning.place-bottom:after{border-bottom-color:#F0AD4E;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-warning.place-left:after{border-left-color:#F0AD4E;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-warning.place-right:after{border-right-color:#F0AD4E;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-warning.border{border:1px solid #fff}.__react_component_tooltip.type-warning.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-warning.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-warning.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-warning.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-error{color:#fff;background-color:#BE6464}.__react_component_tooltip.type-error.place-top:after{border-top-color:#BE6464;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-error.place-bottom:after{border-bottom-color:#BE6464;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-error.place-left:after{border-left-color:#BE6464;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-error.place-right:after{border-right-color:#BE6464;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-error.border{border:1px solid #fff}.__react_component_tooltip.type-error.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-error.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-error.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-error.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-info{color:#fff;background-color:#337AB7}.__react_component_tooltip.type-info.place-top:after{border-top-color:#337AB7;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-info.place-bottom:after{border-bottom-color:#337AB7;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-info.place-left:after{border-left-color:#337AB7;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-info.place-right:after{border-right-color:#337AB7;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-info.border{border:1px solid #fff}.__react_component_tooltip.type-info.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-info.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-info.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-info.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-light{color:#222;background-color:#fff}.__react_component_tooltip.type-light.place-top:after{border-top-color:#fff;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-light.place-bottom:after{border-bottom-color:#fff;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-light.place-left:after{border-left-color:#fff;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-light.place-right:after{border-right-color:#fff;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-light.border{border:1px solid #222}.__react_component_tooltip.type-light.border.place-top:before{border-top:8px solid #222}.__react_component_tooltip.type-light.border.place-bottom:before{border-bottom:8px solid #222}.__react_component_tooltip.type-light.border.place-left:before{border-left:8px solid #222}.__react_component_tooltip.type-light.border.place-right:before{border-right:8px solid #222}.__react_component_tooltip.place-top{margin-top:-10px}.__react_component_tooltip.place-top:before{border-left:10px solid transparent;border-right:10px solid transparent;bottom:-8px;left:50%;margin-left:-10px}.__react_component_tooltip.place-top:after{border-left:8px solid transparent;border-right:8px solid transparent;bottom:-6px;left:50%;margin-left:-8px}.__react_component_tooltip.place-bottom{margin-top:10px}.__react_component_tooltip.place-bottom:before{border-left:10px solid transparent;border-right:10px solid transparent;top:-8px;left:50%;margin-left:-10px}.__react_component_tooltip.place-bottom:after{border-left:8px solid transparent;border-right:8px solid transparent;top:-6px;left:50%;margin-left:-8px}.__react_component_tooltip.place-left{margin-left:-10px}.__react_component_tooltip.place-left:before{border-top:6px solid transparent;border-bottom:6px solid transparent;right:-8px;top:50%;margin-top:-5px}.__react_component_tooltip.place-left:after{border-top:5px solid transparent;border-bottom:5px solid transparent;right:-6px;top:50%;margin-top:-4px}.__react_component_tooltip.place-right{margin-left:10px}.__react_component_tooltip.place-right:before{border-top:6px solid transparent;border-bottom:6px solid transparent;left:-8px;top:50%;margin-top:-5px}.__react_component_tooltip.place-right:after{border-top:5px solid transparent;border-bottom:5px solid transparent;left:-6px;top:50%;margin-top:-4px}.__react_component_tooltip .multi-line{display:block;padding:2px 0px;text-align:center}';
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _kanadata = __webpack_require__(233);
+	
+	var _kanadata2 = _interopRequireDefault(_kanadata);
+	
+	var _reactRouter = __webpack_require__(178);
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(32);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// card1 toggles card to flip/unflip
+	// value1 stores current cards object
+	// cardBack1 is specifically the
+	var QuizStudy = function (_React$Component) {
+	  _inherits(QuizStudy, _React$Component);
+	
+	  function QuizStudy(props) {
+	    _classCallCheck(this, QuizStudy);
+	
+	    var _this = _possibleConstructorReturn(this, (QuizStudy.__proto__ || Object.getPrototypeOf(QuizStudy)).call(this, props));
+	
+	    _this.state = {
+	      characterIdx: 0,
+	      showLink: false,
+	      card1: "card1",
+	      card2: "card2",
+	      card3: "card3",
+	      value1: "",
+	      value2: "",
+	      value3: "",
+	      cardBack1: "",
+	      cardBack2: "",
+	      cardBack3: ""
+	    };
+	    _this.toggleFlip1 = _this.toggleFlip1.bind(_this);
+	    _this.toggleFlip2 = _this.toggleFlip2.bind(_this);
+	    _this.toggleFlip3 = _this.toggleFlip3.bind(_this);
+	    // this.toggleFlip4 = this.toggleFlip4.bind(this);
+	    return _this;
+	  }
+	
+	  // in es6, we need to use componentWillReceiveProps
+	  // this needs to set the randomized cards as well
+	
+	
+	  _createClass(QuizStudy, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      var kana = new _kanadata2.default();
+	      var characterSetName = this.props.route.path.slice(0, -5);
+	      // wow! this is worth writing about in our production readme as
+	      // a very interesting point!
+	      var characterSet = kana[characterSetName]();
+	      var charactersArray = Object.keys(characterSet).map(function (key) {
+	        return characterSet[key];
+	      });
+	
+	      var nextGroup = charactersArray.pop();
+	
+	      this.setState({ props: charactersArray,
+	        next: nextGroup });
+	      this.uniqueCards(charactersArray);
+	    }
+	  }, {
+	    key: 'correctAnswer',
+	    value: function correctAnswer() {
+	      var newIdx = this.state.characterIdx + 1;
+	
+	      if (newIdx < this.state.props.length) {
+	
+	        // turns all of the cards back over to show the face
+	        this.setState({
+	          characterIdx: newIdx,
+	          card1: "card1",
+	          card2: "card2",
+	          card3: "card3"
+	        });
+	
+	        this.uniqueCards(this.state.props);
+	      } else if (newIdx >= this.state.props.length) {
+	        this.setState({
+	          showLink: true
+	        });
+	      }
+	    }
+	  }, {
+	    key: 'toggleFlip1',
+	    value: function toggleFlip1() {
+	      var _this2 = this;
+	
+	      this.setState({ card1: "card1 flipped" });
+	      if (this.state.props[this.state.characterIdx].eChar === this.state.value1.eChar) {
+	        setTimeout(function () {
+	          _this2.correctAnswer();
+	        }, 1250);
+	      }
+	    }
+	  }, {
+	    key: 'toggleFlip2',
+	    value: function toggleFlip2() {
+	      var _this3 = this;
+	
+	      this.setState({ card2: "card2 flipped" });
+	      if (this.state.props[this.state.characterIdx].eChar === this.state.value2.eChar) {
+	        setTimeout(function () {
+	          _this3.correctAnswer();
+	        }, 1250);
+	      }
+	    }
+	  }, {
+	    key: 'toggleFlip3',
+	    value: function toggleFlip3() {
+	      var _this4 = this;
+	
+	      this.setState({ card3: "card3 flipped" });
+	      if (this.state.props[this.state.characterIdx].eChar === this.state.value3.eChar) {
+	        setTimeout(function () {
+	          _this4.correctAnswer();
+	        }, 1250);
+	      }
+	    }
+	  }, {
+	    key: 'shuffle',
+	    value: function shuffle(arr) {
+	      var _this5 = this;
+	
+	      // this is the Fisher Yates algorithm
+	      // the four unique cards are shuffled
+	      for (var i = arr.length - 1; i > 0; i--) {
+	        var j = Math.floor(Math.random() * (i + 1));
+	        var temp = arr[i];
+	        arr[i] = arr[j];
+	        arr[j] = temp;
+	      }
+	      this.setState({
+	        value1: arr[0],
+	        value2: arr[1],
+	        value3: arr[2]
+	      });
+	
+	      setTimeout(function () {
+	        _this5.cardBack();
+	      }, 500);
+	    }
+	
+	    // specifically updates the backs of each card; not directly
+	    // linked to the front of the cards now
+	
+	  }, {
+	    key: 'cardBack',
+	    value: function cardBack() {
+	      this.setState({
+	        cardBack1: this.markDecider(this.state.value1.eChar),
+	        cardBack2: this.markDecider(this.state.value2.eChar),
+	        cardBack3: this.markDecider(this.state.value3.eChar)
+	        // cardBack4: this.markDecider(this.state.value4.eChar)
+	
+	      });
+	    }
+	  }, {
+	    key: 'uniqueCards',
+	    value: function uniqueCards(arr) {
+	
+	      var cardArray = [];
+	      var nums = [this.state.characterIdx];
+	      cardArray.push(arr[this.state.characterIdx]);
+	      while (nums.length < 3) {
+	        var int = Math.floor(Math.random() * arr.length);
+	
+	        if (!nums.includes(int)) {
+	          nums.push(int);
+	          cardArray.push(arr[int]);
+	        }
+	      }
+	      this.shuffle(cardArray);
+	    }
+	
+	    // setTimeout(() => {
+	    //   this.markDecider(cardBack); }, 5000);
+	
+	    // one possible idea to fix the issue with updating too quickly:
+	    // have this linked to state, and update the state with a setTimeout
+	    // function (downside is the state gets even bigger)
+	
+	  }, {
+	    key: 'markDecider',
+	    value: function markDecider(cardFace) {
+	      if (this.state.props[this.state.characterIdx].eChar === cardFace) {
+	        return "O";
+	      } else {
+	        return "X";
+	      }
+	    }
+	    // setTimeout(() => {
+	    //   this.markDecider(cardBack); }, 5000);
+	
+	
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      // the backs of the cards are directly linked to the front of the
+	      // cards; when the front is reset, the back instaly resets as well
+	      // we need to decouple them in the state
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'splashScreen' },
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { className: 'splashLink', to: '/' },
+	          _react2.default.createElement(
+	            'button',
+	            { className: 'splashButton' },
+	            'Back to Index'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'quizImageArea' },
+	          _react2.default.createElement('img', { className: 'quizChar',
+	            src: this.state.props[this.state.characterIdx].jChar })
+	        ),
+	        this.state.showLink ? _react2.default.createElement(
+	          _reactRouter.Link,
+	          { className: 'nextQuizLink',
+	            to: '/' + this.state.next },
+	          _react2.default.createElement(
+	            'button',
+	            { className: 'nextQuizButton' },
+	            'Next Quiz!'
+	          )
+	        ) : null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'quizTop' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'cardContainerTop' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: this.state.card1, onClick: this.toggleFlip1 },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'card1 front' },
+	                this.state.value1.eChar
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'card1 back ' + this.state.cardBack1 },
+	                this.state.cardBack1
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: this.state.card2, onClick: this.toggleFlip2 },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'card2 front' },
+	                this.state.value2.eChar
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'card2 back ' + this.state.cardBack2 },
+	                this.state.cardBack2
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: this.state.card3, onClick: this.toggleFlip3 },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'card3 front' },
+	                this.state.value3.eChar
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'card3 back ' + this.state.cardBack3 },
+	                this.state.cardBack3
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'quizBottom' },
+	          _react2.default.createElement('div', { className: 'cardContainerBottom' })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return QuizStudy;
+	}(_react2.default.Component);
+	// <div className="card1 back"></div>
+	
+	
+	exports.default = QuizStudy;
 
 /***/ }
 /******/ ]);

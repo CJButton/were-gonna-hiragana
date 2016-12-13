@@ -3,12 +3,20 @@
 .logo {
   display: flex;
   justify-content: center;
-  padding-top: 180px;
-  margin-top: 0px;
+  font-weight: 900;
+  color: white;
+  background-color: red;
+  height: 31px;
+  border-radius: 25px;
+  width: 330px;
+  opacity: 0.9;
 }
 
 .logoContainer {
-  animation: bounce-in 3s;
+  position: absolute;
+  margin-top: 160px;
+  margin-left: 293px;
+  animation: bounce-in 2.5s;
 }
 
 @keyframes bounce-in {
@@ -17,18 +25,9 @@
     transform: scale(.3);
 }
 
-/*50% {
-    opacity: 1;
-    transform: scale();
-}
-
-70% {
-    transform: scale(.9);
-}*/
-
-100% {
-    transform: scale(1);
-}
+  100% {
+      transform: scale(1);
+  }
 }
 
 html {
@@ -47,7 +46,9 @@ html {
   padding-left: 96px;
   margin-top: 391px;
   background-color: white;
-  z-index: 1
+  z-index: 1;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 .sun {
@@ -498,11 +499,19 @@ li.charIdx {
 }
 
 .dropdown-Container {
+  position: relative;
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*margin-left: 362px;*/
+  height: 200px;
+  width: 200px;
+  /*background-color: white;*/
   z-index: 4;
 }
 
 .dropdown-List {
-  margin-left: 350px;
+  padding-top: 250px;
+  padding-left: 357px;
 }
 
 .dropdown-list li {

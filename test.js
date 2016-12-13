@@ -39,13 +39,14 @@ export default class Tester extends React.Component {
             Visiting Japan? Business? Have an interest in anime or manga? Or maybe just want to learn a fascinating language? Then you will want to learn 'hiragana'!
             After learning these characters, you can understand signs, menus, and have a greater experience while in Japan! Let&#39;s get started!
           </p></div>
-
             <div className="logoContainer">
               <h2 className="logo">We&#39;re gonna (learn) Hiragana!</h2>
             </div>
             <div className="dropdown-Container">
-
               <div className="dropdown-List">
+                <Link to={"kCharacters"}>
+                <button className="newUserButton">New? Click here!</button>
+                </Link>
                 <button className="dropdown-button" onClick={this.dropdown}>Choose a set of characters to practice.</button>
                 {this.state.dropdown ? <Dropdown /> : null }
              </div>

@@ -117,6 +117,28 @@ html {
   background-image: url("images/fuji2.jpg");
 }
 
+.indexHelperText {
+  color: red;
+  width: 418px;
+  background-color: white;
+  margin-top: 10px;
+  padding-left: 5px;
+  margin-left: 238px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  position: absolute;
+  z-index: 5;
+}
+
+.splashIndex {
+  background-image: url("images/shibuyaatnight.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .charIndex {
   display: flex;
   justify-content: space-around;
@@ -161,18 +183,42 @@ button:focus {
 .titlesIndex {
   display: flex;
   flex-direction: row;
-  padding-top: 60px;
+  padding-top: 76px;
 }
 
 .titleRoma {
-  margin-left:  245px;
+  margin-left:  210px;
+  width: 55px;
+  height: 18px;
+  padding-left: 5px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.romaji {
+  background-color: white;
+  border-radius: 15px;
+  width: 58px;
+  height: 58px;
+  font-size: 50px;
+}
+
+.pro {
+  background-color: white;
+  border-radius: 15px;
+  width: 74px;
+  height: 58px;
+  font-size: 47px;
 }
 
 
-
-
 .titleHira {
-  margin-left: 135px;
+  margin-left: 165px;
+  width: 63px;
+  height: 18px;
+  background-color: white;
+  border-radius: 15px;
+  padding-left: 5px;
 }
 
 
@@ -180,13 +226,17 @@ button:focus {
 
 
 .titlePro {
-  margin-left: 220px;
+  margin-left: 201px;
+  background-color: white;
+  border-radius: 15px;
+  width: 93px;
+  height: 18px;
+  padding-left: 5px;
 }
 
 li.charIdx.chars {
-  margin-top: 10px;
-  font-size: 28px;
-  /*opacity: 0;*/
+  display: flex;
+  justify-content: center;
 }
 
 li.charIdx {
@@ -198,6 +248,8 @@ li.charIdx {
   animation-delay: 0.1s;
   animation-fill-mode: forwards;
   opacity: 0;
+  margin-left: 60px;
+
 }
 
 .line1 {
@@ -205,6 +257,7 @@ li.charIdx {
   animation-delay: 0.4s;
   animation-fill-mode: forwards;
   opacity: 0;
+  margin-left: 60px;
 }
 
 .line2 {
@@ -212,13 +265,16 @@ li.charIdx {
   animation-delay: 0.7s;
   animation-fill-mode: forwards;
   opacity: 0;
+  margin-left: 60px;
 }
+
 
 .line3 {
   animation: cascading 2s;
   animation-delay: 1.0s;
   animation-fill-mode: forwards;
   opacity: 0;
+  margin-left: 60px;
 }
 
 .line4 {
@@ -226,6 +282,7 @@ li.charIdx {
   animation-delay: 1.3s;
   animation-fill-mode: forwards;
   opacity: 0;
+  margin-left: 60px;
 }
 
 @keyframes cascading {
@@ -242,16 +299,22 @@ li.charIdx {
 .index-img {
   width: 58px;
   height: 58px;
+  background-color: white;
+  border-radius: 15px;
 }
 
 .quizImageArea {
   display: flex;
   justify-content: center;
+
 }
 
 .quizChar {
+  margin-top: 60px;
   height: 300px;
-  animation: fadeInLeft 2s;
+  /*animation: fadeInLeft 2s;*/
+  background-color: white;
+  border-radius: 20px;
 }
 /*
 @keyframes fadeInLeft{
@@ -333,6 +396,7 @@ li.charIdx {
   height: 100px;
   transition: transform 1s;
   transform-style: preserve-3d;
+  border-radius: 25px;
 }
 
 .card1 div {
@@ -362,6 +426,7 @@ li.charIdx {
   /*animation: flipper 2s infinite;*/
   /*animation-direction: alternate;*/
   /*background-color: red*/
+  border-radius: 25px;
 }
 
 .card2 div {
@@ -401,6 +466,7 @@ li.charIdx {
   /*animation: flipper 2s infinite;*/
   /*animation-direction: alternate;*/
   /*background-color: red*/
+  border-radius: 25px;
 }
 
 .card3 div {
@@ -500,6 +566,17 @@ li.charIdx {
   border-radius: 25px
 }
 
+.newUserButton {
+  background: red;
+  border: none;
+  color: white;
+  width: 200px;
+  height: 25px;
+  font-size: 14px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+
 .dropdown-Container {
   position: relative;
   /*display: flex;*/
@@ -510,6 +587,7 @@ li.charIdx {
   /*background-color: white;*/
   z-index: 4;
 }
+
 
 .dropdown-List {
   padding-top: 250px;

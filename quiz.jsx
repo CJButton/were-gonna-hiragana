@@ -167,8 +167,8 @@ export default class QuizStudy extends React.Component {
               <button className="splashButton">Back to Index</button>
             </Link>
           <div className="quizImageArea">
-          <img className="quizChar"
-               src={this.state.props[this.state.characterIdx].jChar} />
+            <img className="quizChar"
+                src={this.state.props[this.state.characterIdx].jChar} />
           </div>
 
           {this.state.showLink ? <Link className="nextQuizLink"

@@ -26577,6 +26577,15 @@
 	              'div',
 	              { className: 'dropdown-List' },
 	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: "kCharacters" },
+	                _react2.default.createElement(
+	                  'button',
+	                  { className: 'newUserButton' },
+	                  'New? Click here!'
+	                )
+	              ),
+	              _react2.default.createElement(
 	                'button',
 	                { className: 'dropdown-button', onClick: this.dropdown },
 	                'Choose a set of characters to practice.'
@@ -26772,7 +26781,7 @@
 	      characters.pop();
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'splashScreen' },
+	        { className: 'splashScreen splashIndex' },
 	        _react2.default.createElement(
 	          _reactRouter.Link,
 	          { className: 'splashLink', to: '/' },
@@ -26785,6 +26794,18 @@
 	        _react2.default.createElement(
 	          'div',
 	          null,
+	          '// ',
+	          _react2.default.createElement(
+	            'span',
+	            { className: 'indexExplainer' },
+	            'These are the three elements you need to know to read.'
+	          ),
+	          '// ',
+	          _react2.default.createElement(
+	            'p',
+	            { className: 'indexHelperText' },
+	            'Place your mouse over an element to learn more about it!'
+	          ),
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'titlesIndex' },

@@ -132,7 +132,8 @@ button {
 }
 
 button:focus {
-  outline-color: red;
+  display: none;
+  box-shadow: 0 0 3px #ddd;
 }
 
 .splashButton {
@@ -496,6 +497,7 @@ li.charIdx {
   width: 200px;
   height: 32px;
   font-size: 14px;
+  border-radius: 25px
 }
 
 .dropdown-Container {
@@ -519,8 +521,9 @@ li.charIdx {
 }
 
 .dropdown-list {
-  margin-top: 3px;
+  margin-top: 0px;
   padding-left: 0px;
+  margin-left: 10px;
   margin-right: 50px;
   list-style-position:inside;
   border-bottom: 1px solid black;
@@ -533,12 +536,13 @@ li.charIdx {
   background-color: white;
   position: absolute;
   z-index: 4;
-  width: 198px;
+  width: 176px;
 }
 
 .dropDownButton {
-  background-color: #2219B2;
-  background: #2219B2;
+  /*border-radius: 25px;*/
+  background-color: red;
+  background: red;
   color: white;
   border: none;
   height: 30px;

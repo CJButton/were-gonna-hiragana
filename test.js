@@ -40,9 +40,8 @@ export default class Tester extends React.Component {
             After learning these characters, you can understand signs, menus, and have a greater experience while in Japan! Let&#39;s get started!
           </p></div>
             <div className="logoContainer">
-              <h2 className="logo">We&#39;re gonna (learn) Hiragana!</h2>
+              <h2 className="logo">We&#39;re gonna (learn) Hiragana! maybe</h2>
             </div>
-
             <div className="dropdown-Container">
               <div className="dropdown-List">
                 <button className="dropdown-button" onClick={this.dropdown}>Choose a set of characters</button>

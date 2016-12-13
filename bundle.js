@@ -26579,7 +26579,7 @@
 	              _react2.default.createElement(
 	                'button',
 	                { className: 'dropdown-button', onClick: this.dropdown },
-	                'Choose a set of characters'
+	                'Choose a set of characters to practice.'
 	              ),
 	              this.state.dropdown ? _react2.default.createElement(_dropdown2.default, null) : null
 	            )

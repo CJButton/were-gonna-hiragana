@@ -31,8 +31,6 @@ export default class QuizStudy extends React.Component {
 
 
           <div>
-            // <span className="indexExplainer">These are the three elements you need to know to read.</span>
-            // <p className="indexHelperText">Place your mouse over an element to learn more about it!</p>
             <div className="titlesIndex">
 
               <p data-tip data-for='titleHira' className="titleHira">Hiragana</p>

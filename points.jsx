@@ -8,7 +8,13 @@ export default class PointsCounters extends React.Component {
 
   render() {
     return(
-      <p>Let's see if this works okay.</p>
+      <div className="pointsCounterContainer">
+        <div className="pointsCounter">
+          <div>
+            <p>Here are some words to see if they show up.</p>
+          </div>
+        </div>
+      </div>
     );
   }
 }

@@ -6,10 +6,12 @@ import { Router, Route, Link, browserHistory } from 'react-router';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import PointsCounter from './points';
+
 
 // card1 toggles card to flip/unflip
 // value1 stores current cards object
-// cardBack1 is specifically the
+// cardBack1 is specifically the back of the card
 export default class QuizStudy extends React.Component {
     constructor(props) {
       super(props);
@@ -139,12 +141,6 @@ export default class QuizStudy extends React.Component {
       this.shuffle(cardArray);
     }
 
-    // setTimeout(() => {
-    //   this.markDecider(cardBack); }, 5000);
-
-    // one possible idea to fix the issue with updating too quickly:
-    // have this linked to state, and update the state with a setTimeout
-    // function (downside is the state gets even bigger)
     markDecider(cardFace) {
       if (this.state.props[this.state.characterIdx].eChar === cardFace) {
         return ("O");
@@ -152,24 +148,21 @@ export default class QuizStudy extends React.Component {
         return ("X");
       }
     }
-    // setTimeout(() => {
-    //   this.markDecider(cardBack); }, 5000);
-
 
     render() {
-      // the backs of the cards are directly linked to the front of the
-      // cards; when the front is reset, the back instaly resets as well
-      // we need to decouple them in the state
       return(
         <div className="splashScreen">
+          <Link className="splashLink" to="/">
+            <button className="splashButton">Back to Index</button>
+          </Link>
 
-            <Link className="splashLink" to="/">
-              <button className="splashButton">Back to Index</button>
-            </Link>
+          <div className="quizTopFlex">
+            <PointsCounter/>
           <div className="quizImageArea">
             <img className="quizChar"
                 src={this.state.props[this.state.characterIdx].jChar} />
           </div>
+        </div>
 
           {this.state.showLink ? <Link className="nextQuizLink"
             to={`/` + this.state.next}>

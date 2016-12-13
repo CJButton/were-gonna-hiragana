@@ -221,10 +221,6 @@ button:focus {
   padding-left: 5px;
 }
 
-
-
-
-
 .titlePro {
   margin-left: 201px;
   background-color: white;
@@ -249,7 +245,6 @@ li.charIdx {
   animation-fill-mode: forwards;
   opacity: 0;
   margin-left: 60px;
-
 }
 
 .line1 {
@@ -304,8 +299,7 @@ li.charIdx {
 }
 
 .quizImageArea {
-  display: flex;
-  justify-content: center;
+  padding-right: 100px;
 
 }
 
@@ -576,6 +570,22 @@ li.charIdx {
   border-radius: 25px;
   margin-bottom: 20px;
 }
+
+
+.quizTopFlex {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.pointsCounter {
+  height: 200px;
+  width: 200px;
+  background-color: orange;
+}
+
+
+
+
 
 .dropdown-Container {
   position: relative;

@@ -26794,18 +26794,6 @@
 	        _react2.default.createElement(
 	          'div',
 	          null,
-	          '// ',
-	          _react2.default.createElement(
-	            'span',
-	            { className: 'indexExplainer' },
-	            'These are the three elements you need to know to read.'
-	          ),
-	          '// ',
-	          _react2.default.createElement(
-	            'p',
-	            { className: 'indexHelperText' },
-	            'Place your mouse over an element to learn more about it!'
-	          ),
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'titlesIndex' },
@@ -28220,6 +28208,10 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
+	var _points = __webpack_require__(249);
+	
+	var _points2 = _interopRequireDefault(_points);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28230,7 +28222,7 @@
 	
 	// card1 toggles card to flip/unflip
 	// value1 stores current cards object
-	// cardBack1 is specifically the
+	// cardBack1 is specifically the back of the card
 	var QuizStudy = function (_React$Component) {
 	  _inherits(QuizStudy, _React$Component);
 	
@@ -28394,14 +28386,6 @@
 	      }
 	      this.shuffle(cardArray);
 	    }
-	
-	    // setTimeout(() => {
-	    //   this.markDecider(cardBack); }, 5000);
-	
-	    // one possible idea to fix the issue with updating too quickly:
-	    // have this linked to state, and update the state with a setTimeout
-	    // function (downside is the state gets even bigger)
-	
 	  }, {
 	    key: 'markDecider',
 	    value: function markDecider(cardFace) {
@@ -28411,16 +28395,9 @@
 	        return "X";
 	      }
 	    }
-	    // setTimeout(() => {
-	    //   this.markDecider(cardBack); }, 5000);
-	
-	
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      // the backs of the cards are directly linked to the front of the
-	      // cards; when the front is reset, the back instaly resets as well
-	      // we need to decouple them in the state
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'splashScreen' },
@@ -28435,9 +28412,14 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'quizImageArea' },
-	          _react2.default.createElement('img', { className: 'quizChar',
-	            src: this.state.props[this.state.characterIdx].jChar })
+	          { className: 'quizTopFlex' },
+	          _react2.default.createElement(_points2.default, null),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'quizImageArea' },
+	            _react2.default.createElement('img', { className: 'quizChar',
+	              src: this.state.props[this.state.characterIdx].jChar })
+	          )
 	        ),
 	        this.state.showLink ? _react2.default.createElement(
 	          _reactRouter.Link,
@@ -28514,6 +28496,67 @@
 	
 	
 	exports.default = QuizStudy;
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var PointsCounters = function (_React$Component) {
+	  _inherits(PointsCounters, _React$Component);
+	
+	  function PointsCounters(props) {
+	    _classCallCheck(this, PointsCounters);
+	
+	    return _possibleConstructorReturn(this, (PointsCounters.__proto__ || Object.getPrototypeOf(PointsCounters)).call(this, props));
+	  }
+	
+	  _createClass(PointsCounters, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "pointsCounterContainer" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "pointsCounter" },
+	          _react2.default.createElement(
+	            "div",
+	            null,
+	            _react2.default.createElement(
+	              "p",
+	              null,
+	              "Here are some words to see if they show up."
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return PointsCounters;
+	}(_react2.default.Component);
+	
+	exports.default = PointsCounters;
 
 /***/ }
 /******/ ]);

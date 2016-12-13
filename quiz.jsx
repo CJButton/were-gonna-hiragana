@@ -6,8 +6,6 @@ import { Router, Route, Link, browserHistory } from 'react-router';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import PointsCounter from './points';
-
 
 // card1 toggles card to flip/unflip
 // value1 stores current cards object
@@ -26,12 +24,17 @@ export default class QuizStudy extends React.Component {
         value3: "",
         cardBack1: "",
         cardBack2: "",
-        cardBack3: ""
+        cardBack3: "",
+        correct: 0,
+        guesses: 0,
+        percentage: 0
       };
       this.toggleFlip1 = this.toggleFlip1.bind(this);
       this.toggleFlip2 = this.toggleFlip2.bind(this);
       this.toggleFlip3 = this.toggleFlip3.bind(this);
-      // this.toggleFlip4 = this.toggleFlip4.bind(this);
+
+      this.guessMade = this.guessMade.bind(this);
+      this.guessPercentage = this.guessPercentage.bind(this);
     }
 
     // in es6, we need to use componentWillReceiveProps
@@ -55,11 +58,12 @@ export default class QuizStudy extends React.Component {
 
     correctAnswer() {
       let newIdx = this.state.characterIdx + 1;
+      let newCorrect = this.state.correct + 1;
 
       if (newIdx < this.state.props.length) {
-
         // turns all of the cards back over to show the face
         this.setState({
+          correct: newCorrect,
           characterIdx: newIdx,
           card1: "card1",
           card2: "card2",
@@ -74,8 +78,25 @@ export default class QuizStudy extends React.Component {
       }
     }
 
+    guessMade() {
+      let newGuesses = this.state.guesses + 1;
+
+      this.setState({
+        guesses: newGuesses
+      });
+    }
+
+    guessPercentage() {
+      let newPercentage = this.state.guesses / this.state.correct;
+
+      this.setState({
+        percentage: newPercentage
+      });
+    }
+
     toggleFlip1() {
       this.setState({card1: "card1 flipped"});
+      this.guessMade();
       if (this.state.props[this.state.characterIdx].eChar === this.state.value1.eChar) {
         setTimeout(() => { this.correctAnswer(); }, 1250);
       }
@@ -83,6 +104,7 @@ export default class QuizStudy extends React.Component {
 
     toggleFlip2() {
       this.setState({card2: "card2 flipped"});
+      this.guessMade();
       if (this.state.props[this.state.characterIdx].eChar === this.state.value2.eChar) {
         setTimeout(() => {this.correctAnswer(); }, 1250);
       }
@@ -90,6 +112,7 @@ export default class QuizStudy extends React.Component {
 
     toggleFlip3() {
       this.setState({card3: "card3 flipped"});
+      this.guessMade();
       if (this.state.props[this.state.characterIdx].eChar === this.state.value3.eChar) {
         setTimeout(() => {this.correctAnswer(); }, 1250);
       }
@@ -126,7 +149,6 @@ export default class QuizStudy extends React.Component {
     }
 
     uniqueCards(arr) {
-
       let cardArray = [];
       let nums = [this.state.characterIdx];
       cardArray.push(arr[this.state.characterIdx]);
@@ -157,7 +179,16 @@ export default class QuizStudy extends React.Component {
           </Link>
 
           <div className="quizTopFlex">
-            <PointsCounter/>
+            <div className="pointsCounterContainer">
+              <div className="pointsCounter">
+                <div>
+                  <p>Number Questions: {this.state.props.length}</p>
+                  <p>Total Correct: {this.state.correct}</p>
+                  <p>Guesses Made: {this.state.guesses}</p>
+                  <p>Percentage: {this.state.percentage}</p>
+                </div>
+              </div>
+            </div>
           <div className="quizImageArea">
             <img className="quizChar"
                 src={this.state.props[this.state.characterIdx].jChar} />
@@ -204,9 +235,8 @@ export default class QuizStudy extends React.Component {
         </div>
 
 
-        </div>
+      </div>
 
       );
     }
 }
-// <div className="card1 back"></div>

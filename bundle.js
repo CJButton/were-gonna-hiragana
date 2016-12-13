@@ -28208,10 +28208,6 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _points = __webpack_require__(249);
-	
-	var _points2 = _interopRequireDefault(_points);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28242,12 +28238,17 @@
 	      value3: "",
 	      cardBack1: "",
 	      cardBack2: "",
-	      cardBack3: ""
+	      cardBack3: "",
+	      correct: 0,
+	      guesses: 0,
+	      percentage: 0
 	    };
 	    _this.toggleFlip1 = _this.toggleFlip1.bind(_this);
 	    _this.toggleFlip2 = _this.toggleFlip2.bind(_this);
 	    _this.toggleFlip3 = _this.toggleFlip3.bind(_this);
-	    // this.toggleFlip4 = this.toggleFlip4.bind(this);
+	
+	    _this.guessMade = _this.guessMade.bind(_this);
+	    _this.guessPercentage = _this.guessPercentage.bind(_this);
 	    return _this;
 	  }
 	
@@ -28277,11 +28278,12 @@
 	    key: 'correctAnswer',
 	    value: function correctAnswer() {
 	      var newIdx = this.state.characterIdx + 1;
+	      var newCorrect = this.state.correct + 1;
 	
 	      if (newIdx < this.state.props.length) {
-	
 	        // turns all of the cards back over to show the face
 	        this.setState({
+	          correct: newCorrect,
 	          characterIdx: newIdx,
 	          card1: "card1",
 	          card2: "card2",
@@ -28296,11 +28298,30 @@
 	      }
 	    }
 	  }, {
+	    key: 'guessMade',
+	    value: function guessMade() {
+	      var newGuesses = this.state.guesses + 1;
+	
+	      this.setState({
+	        guesses: newGuesses
+	      });
+	    }
+	  }, {
+	    key: 'guessPercentage',
+	    value: function guessPercentage() {
+	      var newPercentage = this.state.guesses / this.state.correct;
+	
+	      this.setState({
+	        percentage: newPercentage
+	      });
+	    }
+	  }, {
 	    key: 'toggleFlip1',
 	    value: function toggleFlip1() {
 	      var _this2 = this;
 	
 	      this.setState({ card1: "card1 flipped" });
+	      this.guessMade();
 	      if (this.state.props[this.state.characterIdx].eChar === this.state.value1.eChar) {
 	        setTimeout(function () {
 	          _this2.correctAnswer();
@@ -28313,6 +28334,7 @@
 	      var _this3 = this;
 	
 	      this.setState({ card2: "card2 flipped" });
+	      this.guessMade();
 	      if (this.state.props[this.state.characterIdx].eChar === this.state.value2.eChar) {
 	        setTimeout(function () {
 	          _this3.correctAnswer();
@@ -28325,6 +28347,7 @@
 	      var _this4 = this;
 	
 	      this.setState({ card3: "card3 flipped" });
+	      this.guessMade();
 	      if (this.state.props[this.state.characterIdx].eChar === this.state.value3.eChar) {
 	        setTimeout(function () {
 	          _this4.correctAnswer();
@@ -28372,7 +28395,6 @@
 	  }, {
 	    key: 'uniqueCards',
 	    value: function uniqueCards(arr) {
-	
 	      var cardArray = [];
 	      var nums = [this.state.characterIdx];
 	      cardArray.push(arr[this.state.characterIdx]);
@@ -28413,7 +28435,42 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'quizTopFlex' },
-	          _react2.default.createElement(_points2.default, null),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'pointsCounterContainer' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'pointsCounter' },
+	              _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  'Number Questions: ',
+	                  this.state.props.length
+	                ),
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  'Total Correct: ',
+	                  this.state.correct
+	                ),
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  'Guesses Made: ',
+	                  this.state.guesses
+	                ),
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  'Percentage: ',
+	                  this.state.percentage
+	                )
+	              )
+	            )
+	          ),
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'quizImageArea' },
@@ -28492,71 +28549,8 @@
 	
 	  return QuizStudy;
 	}(_react2.default.Component);
-	// <div className="card1 back"></div>
-	
 	
 	exports.default = QuizStudy;
-
-/***/ },
-/* 249 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var PointsCounters = function (_React$Component) {
-	  _inherits(PointsCounters, _React$Component);
-	
-	  function PointsCounters(props) {
-	    _classCallCheck(this, PointsCounters);
-	
-	    return _possibleConstructorReturn(this, (PointsCounters.__proto__ || Object.getPrototypeOf(PointsCounters)).call(this, props));
-	  }
-	
-	  _createClass(PointsCounters, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "div",
-	        { className: "pointsCounterContainer" },
-	        _react2.default.createElement(
-	          "div",
-	          { className: "pointsCounter" },
-	          _react2.default.createElement(
-	            "div",
-	            null,
-	            _react2.default.createElement(
-	              "p",
-	              null,
-	              "Here are some words to see if they show up."
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return PointsCounters;
-	}(_react2.default.Component);
-	
-	exports.default = PointsCounters;
 
 /***/ }
 /******/ ]);

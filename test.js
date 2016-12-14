@@ -41,6 +41,7 @@ export default class Tester extends React.Component {
           </p></div>
             <div className="logoContainer">
               <h2 className="logo">We&#39;re gonna (learn) Hiragana!</h2>
+              <h3 className="logo logo2">Learn to read Japanese!</h3>
             </div>
             <div className="dropdown-Container">
               <div className="dropdown-List">
@@ -56,6 +57,3 @@ export default class Tester extends React.Component {
       );
     }
 }
-
-// <div className="splashHi">
-// <img className="splashHi2" src="http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479352414/ka_uocs0v.png"></img></div>

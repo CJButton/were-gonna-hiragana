@@ -5,24 +5,33 @@
   justify-content: center;
   font-weight: 900;
   color: white;
-  background-color: red;
+  background-color: rgba(255,0,0,0.8);
   height: 31px;
-  border-radius: 25px;
+  border-radius: 10px;
   width: 330px;
-  opacity: 0.9;
+  margin-bottom: -2px;
+}
+
+.logo2 {
+  margin-top: 0px;
+  margin-left: 54px;
+  width: 222px;
+  height: 25px;
+  background-color: rgba(255,0,0,0.8);
+  border-radius: 5px;
 }
 
 .logoContainer {
   position: absolute;
-  margin-top: 160px;
+  margin-top: 100px;
   margin-left: 293px;
-  animation: bounce-in 2.5s;
+  animation: bounce-in 2s;
 }
 
 @keyframes bounce-in {
   0% {
-    opacity: 0;
-    transform: scale(.3);
+    opacity: 1;
+    transform: scale(.1);
 }
 
   100% {
@@ -61,8 +70,8 @@ html {
   position: absolute;
   z-index: 0;
   background-color: red;
-  animation: rising 3.5s;
-  animation-delay: 1.8s;
+  animation: rising 2s;
+  animation-delay: 1.5s;
   animation-fill-mode: forwards;
 }
 
@@ -72,7 +81,7 @@ html {
   }
 
   100% {
-    transform: translate(0, -120px) scale3d(1.2, 1.2, 1.2);
+    transform: translate(0, -120px) scale3d(1.4, 1.4, 1.4);
   }
 }
 
@@ -120,14 +129,14 @@ html {
 .indexHelperText {
   color: red;
   width: 418px;
-  background-color: white;
-  margin-top: 10px;
+  background-color: rgba(255,255,255,0.75);
+  margin-top: 30px;
   padding-left: 5px;
   margin-left: 238px;
   font-size: 18px;
   display: flex;
   justify-content: center;
-  border-radius: 15px;
+  border-radius: 5px;
   position: absolute;
   z-index: 5;
 }
@@ -178,12 +187,13 @@ button:focus {
   margin-top: 40px;
   height: 30px;
   width: 100px;
+  border-radius: 10px;
 }
 
 .titlesIndex {
   display: flex;
   flex-direction: row;
-  padding-top: 76px;
+  padding-top: 60px;
 }
 
 .titleRoma {
@@ -191,21 +201,21 @@ button:focus {
   width: 55px;
   height: 18px;
   padding-left: 5px;
-  background-color: white;
-  border-radius: 15px;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 10px;
 }
 
 .romaji {
-  background-color: white;
-  border-radius: 15px;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 10px;
   width: 58px;
   height: 58px;
   font-size: 50px;
 }
 
 .pro {
-  background-color: white;
-  border-radius: 15px;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 10px;
   width: 74px;
   height: 58px;
   font-size: 47px;
@@ -216,15 +226,15 @@ button:focus {
   margin-left: 165px;
   width: 63px;
   height: 18px;
-  background-color: white;
-  border-radius: 15px;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 10px;
   padding-left: 5px;
 }
 
 .titlePro {
   margin-left: 201px;
-  background-color: white;
-  border-radius: 15px;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 10px;
   width: 93px;
   height: 18px;
   padding-left: 5px;
@@ -294,21 +304,21 @@ li.charIdx {
 .index-img {
   width: 58px;
   height: 58px;
-  background-color: white;
-  border-radius: 15px;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 10px;
 }
 
 .quizImageArea {
   padding-right: 90px;
-
 }
+
 
 .quizChar {
   margin-top: 60px;
   height: 300px;
   /*animation: fadeInLeft 2s;*/
-  background-color: white;
-  border-radius: 20px;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 10px;
 }
 /*
 @keyframes fadeInLeft{
@@ -335,6 +345,8 @@ li.charIdx {
   margin-left: 400px;
   height: 30px;
   width: 100px;
+  border-radius: 5px;
+
 }
 
 .nextQuizButton {
@@ -344,16 +356,18 @@ li.charIdx {
   border: none;
   color: white;
   width: 100px;
+  border-radius: 5px;
 }
 
 .quizToLink {
   padding-left: 9px;
   margin-left: 400px;
   background: red;
-  background-color: red;
+  background-color: rgba(255,0,0,0.8);
   border: none;
   color: white;
   width: 130px;
+  border-radius: 8px;
 }
 
 .quizTop {
@@ -390,7 +404,7 @@ li.charIdx {
   height: 100px;
   transition: transform 1s;
   transform-style: preserve-3d;
-  border-radius: 25px;
+  border-radius: 10px;
 }
 
 .card1 div {
@@ -417,10 +431,7 @@ li.charIdx {
   height: 100px;
   transition: transform 1s;
   transform-style: preserve-3d;
-  /*animation: flipper 2s infinite;*/
-  /*animation-direction: alternate;*/
-  /*background-color: red*/
-  border-radius: 25px;
+  border-radius: 10px;
 }
 
 .card2 div {
@@ -433,15 +444,6 @@ li.charIdx {
   position: absolute;
   backface-visibility: hidden;
 }
-
-/*.card2 .front {
-  background: purple;
-}
-
-.card2 .back {
-  background: blue;
-  transform: rotateY(180deg);
-}*/
 
 .card2.flipped {
   transform: rotateY(180deg);
@@ -457,10 +459,7 @@ li.charIdx {
   height: 100px;
   transition: transform 1s;
   transform-style: preserve-3d;
-  /*animation: flipper 2s infinite;*/
-  /*animation-direction: alternate;*/
-  /*background-color: red*/
-  border-radius: 25px;
+  border-radius: 10px;
 }
 
 .card3 div {
@@ -473,15 +472,6 @@ li.charIdx {
   position: absolute;
   backface-visibility: hidden;
 }
-
-/*.card3 .front {
-  background: purple;
-}
-
-.card3 .back {
-  background: blue;
-  transform: rotateY(180deg);
-}*/
 
 .card3.flipped {
   transform: rotateY(180deg);
@@ -510,11 +500,10 @@ li.charIdx {
 }
 
 .front {
-  background: blue;
+  background-color: rgba(0,0,255,0.8);
 }
 
 .back {
-  background: orange;
   transform: rotateY(180deg);
 }
 
@@ -539,11 +528,12 @@ li.charIdx {
 }*/
 
 .X {
-  background: red;
+  background-color: rgba(255,0,0,0.8);
 }
 
+
 .O {
-  background: green;
+  background-color: rgba(0,128,0,0.8);
 }
 
 .quizLink {
@@ -551,23 +541,23 @@ li.charIdx {
 }
 
 .dropdown-button {
-  background: red;
+  background-color: rgba(255,0,0,0.8);
   border: none;
   color: white;
   width: 200px;
   height: 37px;
   font-size: 14px;
-  border-radius: 25px
+  border-radius: 10px
 }
 
 .newUserButton {
-  background: red;
+  background-color: rgba(255,0,0,0.8);
   border: none;
   color: white;
   width: 200px;
   height: 25px;
   font-size: 14px;
-  border-radius: 25px;
+  border-radius: 5px;
   margin-bottom: 20px;
 }
 
@@ -588,6 +578,7 @@ li.charIdx {
   padding-top: 3px;
   display: flex;
   flex-direction: column;
+  opacity: .75;
 }
 
 .pointsCounter p {
@@ -630,8 +621,8 @@ li.charIdx {
   border-left: 1px solid black;
   border-right: 1px solid black;
   list-style-type: none;
-  /*border-bottom-left-radius: 15px;*/
-  /*border-bottom-right-radius: 15px;*/
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   border-color: black;
   background-color: white;
   position: absolute;
@@ -641,10 +632,11 @@ li.charIdx {
 
 .dropDownButton {
   /*border-radius: 25px;*/
-  background-color: red;
-  background: red;
+  background-color: rgba(255,0,0,0.8);
   color: white;
   border: none;
   height: 30px;
   width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }

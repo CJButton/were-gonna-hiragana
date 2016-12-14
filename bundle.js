@@ -96,10 +96,12 @@
 	  _react2.default.createElement(_reactRouter.Route, { path: 'kCharacters/quiz', component: _quiz2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'sCharacters', component: _test4.default, props: allKana.sCharacters() }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'sCharacters/quiz', component: _quiz2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'vCharacters', component: _test4.default, props: allKana.sCharacters() }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'tCharacters', component: _test4.default, props: allKana.sCharacters() }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'nCharacters', component: _test4.default, props: allKana.sCharacters() }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'hCharacters', component: _test4.default, props: allKana.sCharacters() }),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'vowelCharacters', component: _test4.default, props: allKana.vowelCharacters() }),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'vowelCharacters/quiz', component: _quiz2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'nCharacters', component: _test4.default, props: allKana.nCharacters() }),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'nCharacters/quiz', component: _quiz2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'hCharacters', component: _test4.default, props: allKana.hCharacters() }),
+	  _react2.default.createElement(_reactRouter.Route, { path: 'hCharacters/quiz', component: _quiz2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'mCharacters', component: _test4.default, props: allKana.sCharacters() }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'yCharacters', component: _test4.default, props: allKana.sCharacters() }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'rCharacters', component: _test4.default, props: allKana.sCharacters() }),
@@ -26450,11 +26452,11 @@
 	    key: "kCharacters",
 	    value: function kCharacters() {
 	      return {
-	        1: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479352414/ka_uocs0v.png", eChar: "ka", pChar: "kah" },
-	        2: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479352414/ki_y8ksg2.png", eChar: "ki", pChar: "key" },
-	        3: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479352414/ku_kzg5ed.png", eChar: "ku", pChar: "coo" },
-	        4: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479351370/ke_z32cwf.png", eChar: "ke", pChar: "keh" },
-	        5: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479351370/ko_hhfgn5.png", eChar: "ko", pChar: "coh" },
+	        1: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479352414/ka_uocs0v.png", eChar: "ka ", pChar: "kah" },
+	        2: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479352414/ki_y8ksg2.png", eChar: "ki ", pChar: "key" },
+	        3: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479352414/ku_kzg5ed.png", eChar: "ku ", pChar: "coo" },
+	        4: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479351370/ke_z32cwf.png", eChar: "ke ", pChar: "keh" },
+	        5: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479351370/ko_hhfgn5.png", eChar: "ko ", pChar: "coh" },
 	        next: "sCharacters"
 	      };
 	    }
@@ -26462,12 +26464,48 @@
 	    key: "sCharacters",
 	    value: function sCharacters() {
 	      return {
-	        1: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479366267/sa_htynpp.png", eChar: "sa", pChar: "sah" },
+	        1: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479366267/sa_htynpp.png", eChar: "sa ", pChar: "sah" },
 	        2: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479366267/shi_wtqdkp.png", eChar: "shi", pChar: "she" },
-	        3: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479366267/su_u9seqb.png", eChar: "su", pChar: "sue" },
-	        4: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479366267/se_g30gro.png", eChar: "se", pChar: "seh" },
-	        5: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479366267/so_bnc9lz.png", eChar: "so", pChar: "sew" },
-	        next: "tCharacters"
+	        3: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479366267/su_u9seqb.png", eChar: "su ", pChar: "sue" },
+	        4: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479366267/se_g30gro.png", eChar: "se ", pChar: "seh" },
+	        5: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479366267/so_bnc9lz.png", eChar: "so ", pChar: "sew" },
+	        next: "vowelCharacters"
+	      };
+	    }
+	  }, {
+	    key: "vowelCharacters",
+	    value: function vowelCharacters() {
+	      return {
+	        1: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1481673358/a_hlgvcs.png", eChar: " a ", pChar: "ah " },
+	        2: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1481673358/i_rfcpyd.png", eChar: " i ", pChar: " E " },
+	        3: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1481673358/u_oii9zi.png", eChar: " u ", pChar: "ew" },
+	        4: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1481673358/e_dvxlrk.png", eChar: " e ", pChar: "eh " },
+	        5: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1481673358/o_esyro6.png", eChar: " o ", pChar: " O " },
+	        next: "nCharacters"
+	      };
+	    }
+	  }, {
+	    key: "nCharacters",
+	    value: function nCharacters() {
+	      return {
+	        1: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1481673359/na_kexxr8.png", eChar: "na ", pChar: "nah" },
+	        2: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1481673359/ni_tlzrlv.png", eChar: "ni ", pChar: "nee" },
+	        3: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1481673358/nu_ycinco.png", eChar: "nu ", pChar: "new" },
+	        4: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1481673358/ne_dmmf73.png", eChar: "ne ", pChar: "neh" },
+	        5: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1481673358/no_rrxroz.png", eChar: "no ", pChar: "no " },
+	        next: "hCharacters"
+	      };
+	    }
+	  }, {
+	    key: "hCharacters",
+	    value: function hCharacters() {
+	      return {
+	        1: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1481673358/ha_lrksae.png", eChar: "ha ", pChar: "hah" },
+	        2: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1481673358/hi_gbyxte.png", eChar: "hi ", pChar: "he " },
+	        3: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1481673358/fu_raxfow.png", eChar: "fu ", pChar: "foo" },
+	        4: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1481673358/he_oi0fos.png", eChar: "he ", pChar: "heh" },
+	        5: { jChar: "http://res.cloudinary.com/ddbfkqb9m/image/upload/v1481673358/ho_cr3eo2.png", eChar: "ho ", pChar: "hoe" },
+	        next: "tfCharacters"
 	      };
 	    }
 	  }]);
@@ -26568,6 +26606,11 @@
 	              'h2',
 	              { className: 'logo' },
 	              'We\'re gonna (learn) Hiragana!'
+	            ),
+	            _react2.default.createElement(
+	              'h3',
+	              { className: 'logo logo2' },
+	              'Learn to read Japanese!'
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -26600,10 +26643,6 @@
 	
 	  return Tester;
 	}(_react2.default.Component);
-	
-	// <div className="splashHi">
-	// <img className="splashHi2" src="http://res.cloudinary.com/ddbfkqb9m/image/upload/v1479352414/ka_uocs0v.png"></img></div>
-	
 	
 	exports.default = Tester;
 
@@ -26682,8 +26721,12 @@
 	            null,
 	            _react2.default.createElement(
 	              _reactRouter.Link,
-	              { to: 'test4' },
-	              'To test4'
+	              { to: 'vowelCharacters' },
+	              _react2.default.createElement(
+	                'button',
+	                { className: 'dropDownButton' },
+	                'To Vowel Characters'
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -26691,8 +26734,12 @@
 	            null,
 	            _react2.default.createElement(
 	              _reactRouter.Link,
-	              { to: 'test5' },
-	              'To test5'
+	              { to: 'nCharacters' },
+	              _react2.default.createElement(
+	                'button',
+	                { className: 'dropDownButton' },
+	                'To N Characters'
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -26700,17 +26747,12 @@
 	            null,
 	            _react2.default.createElement(
 	              _reactRouter.Link,
-	              { to: 'test6' },
-	              'To test6'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'li',
-	            null,
-	            _react2.default.createElement(
-	              _reactRouter.Link,
-	              { to: 'test7' },
-	              'To test7'
+	              { to: 'hCharacters' },
+	              _react2.default.createElement(
+	                'button',
+	                { className: 'dropDownButton' },
+	                'To H Characters'
+	              )
 	            )
 	          )
 	        )
@@ -26794,6 +26836,11 @@
 	        _react2.default.createElement(
 	          'div',
 	          null,
+	          _react2.default.createElement(
+	            'p',
+	            { className: 'indexHelperText' },
+	            'Place your mouse over an element to learn more about it!'
+	          ),
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'titlesIndex' },
@@ -28451,7 +28498,7 @@
 	              _react2.default.createElement(
 	                'p',
 	                null,
-	                'Number Questions: ',
+	                'Questions: ',
 	                this.state.props.length
 	              ),
 	              _react2.default.createElement(

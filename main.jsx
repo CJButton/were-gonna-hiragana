@@ -30,10 +30,15 @@ var routes = (
     <Route path="sCharacters" component={quizStudy} props={allKana.sCharacters()}/>
       <Route path="sCharacters/quiz" component={quiz}/>
 
-    <Route path="vCharacters" component={quizStudy} props={allKana.sCharacters()}/>
-    <Route path="tCharacters" component={quizStudy} props={allKana.sCharacters()}/>
-    <Route path="nCharacters" component={quizStudy} props={allKana.sCharacters()}/>
-    <Route path="hCharacters" component={quizStudy} props={allKana.sCharacters()}/>
+    <Route path="vowelCharacters" component={quizStudy} props={allKana.vowelCharacters()}/>
+      <Route path="vowelCharacters/quiz" component={quiz}/>
+
+    <Route path="nCharacters" component={quizStudy} props={allKana.nCharacters()}/>
+      <Route path="nCharacters/quiz" component={quiz}/>
+
+    <Route path="hCharacters" component={quizStudy} props={allKana.hCharacters()}/>
+      <Route path="hCharacters/quiz" component={quiz}/>
+
     <Route path="mCharacters" component={quizStudy} props={allKana.sCharacters()}/>
     <Route path="yCharacters" component={quizStudy} props={allKana.sCharacters()}/>
     <Route path="rCharacters" component={quizStudy} props={allKana.sCharacters()}/>

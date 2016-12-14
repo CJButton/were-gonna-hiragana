@@ -184,7 +184,7 @@ export default class QuizStudy extends React.Component {
           <div className="quizTopFlex">
             <div className="pointsCounterContainer">
               <div className="pointsCounter">
-                  <p>Number Questions: {this.state.props.length}</p>
+                  <p>Questions: {this.state.props.length}</p>
                   <p>Total Correct: {this.state.correct}</p>
                   <p>Guesses Made: {this.state.guesses}</p>
                   <p>Percentage: {this.state.percentage}</p>

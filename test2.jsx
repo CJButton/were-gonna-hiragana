@@ -22,7 +22,7 @@ export default class QuizStudy extends React.Component {
       });
       characters.pop();
       return(
-        <div className="splashScreen splashIndex">
+        <div className="splashScreen">
 
             <Link className="splashLink" to="/">
               <button className="splashButton">Back to Index

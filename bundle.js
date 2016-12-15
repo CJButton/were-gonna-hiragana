@@ -26823,7 +26823,7 @@
 	      characters.pop();
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'splashScreen splashIndex' },
+	        { className: 'splashScreen' },
 	        _react2.default.createElement(
 	          _reactRouter.Link,
 	          { className: 'splashLink', to: '/' },

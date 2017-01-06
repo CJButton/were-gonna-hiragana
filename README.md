@@ -25,7 +25,7 @@ the Splash
 Upon loading the splash page, the app's name zooms in and the sun rises from
 behind.
 
-![splash screen](images/production_images/splash.png)
+![splash screen](images/splash.png)
 
 The sun object is hidden behind the text using positive: absolute and the
 z-index. This allows different nodes to be placed at various levels on
@@ -51,29 +51,29 @@ the Study Page
 After beginning, the user is taken to this page to learn the characters,
 how to read them, and their pronunciation.
 
-![study](images/production_images/study.png)
+![study](images/study.png)
 
 As they appear on screen, they cascade down. This effect was created by
 having keyframes let the node slide down a mere 20 pixels.
 
-![cascade code](images/production_images/cascade.png)
+![cascade code](images/cascade.png)
 
 the Quiz
 
-![quiz](images/production_images/quiz.png)
+![quiz](images/quiz.png)
 
 Here the student is quizzed on the correct reading for each character. The
 cards at the bottom will flip using na onClick event handler. Once the
 correct answer is found, all cards flip back over, and the next character is
 shown.
 
-![card flip](images/production_images/cardflip.png)
+![card flip](images/cardflip.png)
 
 This animation was a little trickier than the others, as the card needed
 to remain in place, and appear to be one single object. Each card has both
 a front and a back.
 
-![front back of each card](images/production_images/frontback.png)
+![front back of each card](images/frontback.png)
 
 Using transform, we can rotate the object in any direction we wish. Here we
 have it move on its Y axis.

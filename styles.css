@@ -205,14 +205,15 @@ button:focus {
 .titlesIndex {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   padding-top: 60px;
 }
 
 .titleRoma {
-  position: absolute;
-  left: 48.75%;
-  /*margin-left:  210px;*/
-  width: 55px;
+  /*position: absolute;*/
+  /*left: 48.75%;*/
+  margin-left:  8px;
+  width: 60px;
   height: 18px;
   padding-left: 5px;
   background-color: rgba(255,255,255,0.6);
@@ -243,9 +244,9 @@ button:focus {
 
 
 .titleHira {
-  position: absolute;
-  left: 27.5%;
-  /*margin-left: 165px;*/
+  /*position: absolute;*/
+  /*left: 27.5%;*/
+  margin-left: 58px;
   width: 70px;
   height: 18px;
   background-color: rgba(255,255,255,0.6);
@@ -255,8 +256,8 @@ button:focus {
 }
 
 .titlePro {
-  position: absolute;
-  left: 68.45%;
+  /*position: absolute;*/
+  /*left: 68.45%;*/
   /*margin-left: 201px;*/
   background-color: rgba(255,255,255,0.6);
   border-radius: 10px;
@@ -276,7 +277,7 @@ li.charIdx {
 }
 
 .line0 {
-  margin-top: 55px;
+  /*margin-top: 55px;*/
   animation: cascading 2s;
   animation-delay: 0.1s;
   animation-fill-mode: forwards;

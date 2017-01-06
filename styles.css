@@ -15,6 +15,8 @@ html {
   border-radius: 10px;
   width: 330px;
   margin-bottom: -2px;
+  border: black solid 3px;
+  /*border-bottom: none;*/
 }
 
 .logo2 {
@@ -67,6 +69,7 @@ html {
 
 .sun {
   border-color: black;
+  border: black solid 3px;
 	border-radius: 50%;
 	width: 165px;
 	height: 165px;
@@ -144,6 +147,7 @@ html {
   border-radius: 5px;
   position: absolute;
   z-index: 5;
+  border: black solid 3px;
 }
 
 .splashIndex {
@@ -179,6 +183,8 @@ button:focus {
   background-color: red;
   border: none;
   color: white;
+  border-radius: 15px;
+  border-left: none;
 }
 
 .splashLink {
@@ -193,6 +199,7 @@ button:focus {
   height: 30px;
   width: 100px;
   border-radius: 10px;
+  border: black solid 3px;
 }
 
 .titlesIndex {
@@ -202,17 +209,23 @@ button:focus {
 }
 
 .titleRoma {
-  margin-left:  210px;
+  position: absolute;
+  left: 48.75%;
+  /*margin-left:  210px;*/
   width: 55px;
   height: 18px;
   padding-left: 5px;
   background-color: rgba(255,255,255,0.6);
   border-radius: 10px;
+  border: black 2px solid;
+
 }
 
 .romaji {
   background-color: rgba(255,255,255,0.6);
   border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
   width: 65px;
   height: 58px;
   font-size: 50px;
@@ -220,8 +233,9 @@ button:focus {
 
 .pro {
   background-color: rgba(255,255,255,0.6);
+  border-width: 3px;
   border-radius: 10px;
-
+  border-style: solid;
   width: 86px;
   height: 58px;
   font-size: 47px;
@@ -229,21 +243,27 @@ button:focus {
 
 
 .titleHira {
-  margin-left: 165px;
-  width: 63px;
+  position: absolute;
+  left: 27.5%;
+  /*margin-left: 165px;*/
+  width: 70px;
   height: 18px;
   background-color: rgba(255,255,255,0.6);
   border-radius: 10px;
   padding-left: 5px;
+  border: black 2px solid;
 }
 
 .titlePro {
-  margin-left: 201px;
+  position: absolute;
+  left: 68.45%;
+  /*margin-left: 201px;*/
   background-color: rgba(255,255,255,0.6);
   border-radius: 10px;
   width:  105px;
   height: 18px;
   padding-left: 5px;
+  border: black 2px solid;
 }
 
 li.charIdx.chars {
@@ -256,6 +276,7 @@ li.charIdx {
 }
 
 .line0 {
+  margin-top: 55px;
   animation: cascading 2s;
   animation-delay: 0.1s;
   animation-fill-mode: forwards;
@@ -312,6 +333,8 @@ li.charIdx {
   height: 58px;
   background-color: rgba(255,255,255,0.6);
   border-radius: 10px;
+  border-style: solid;
+  border-width: 3px;
 }
 
 .quizImageArea {
@@ -325,6 +348,7 @@ li.charIdx {
   /*animation: fadeInLeft 2s;*/
   background-color: rgba(255,255,255,0.5);
   border-radius: 10px;
+  border: black solid 3px;
 }
 /*
 @keyframes fadeInLeft{
@@ -374,6 +398,7 @@ li.charIdx {
   color: white;
   width: 130px;
   border-radius: 8px;
+  border: solid black 3px;
 }
 
 .quizTop {
@@ -411,6 +436,7 @@ li.charIdx {
   transition: transform 1s;
   transform-style: preserve-3d;
   border-radius: 10px;
+  border: black solid 4px;
 }
 
 .card1 div {
@@ -438,6 +464,8 @@ li.charIdx {
   transition: transform 1s;
   transform-style: preserve-3d;
   border-radius: 10px;
+  border: black solid 4px;
+
 }
 
 .card2 div {
@@ -449,6 +477,8 @@ li.charIdx {
   font-size: 100px;
   position: absolute;
   backface-visibility: hidden;
+  /*border: black solid 5px;*/
+
 }
 
 .card2.flipped {
@@ -466,6 +496,8 @@ li.charIdx {
   transition: transform 1s;
   transform-style: preserve-3d;
   border-radius: 10px;
+  border: black solid 4px;
+
 }
 
 .card3 div {
@@ -477,6 +509,8 @@ li.charIdx {
   font-size: 100px;
   position: absolute;
   backface-visibility: hidden;
+  /*border: black solid 5px;*/
+
 }
 
 .card3.flipped {
@@ -507,10 +541,15 @@ li.charIdx {
 
 .front {
   background-color: rgba(0,0,255,0.8);
+  border: none;
+  border-radius: 3px;
+
 }
 
 .back {
   transform: rotateY(180deg);
+  border: none;
+  border-radius: 3px;
 }
 
 .card4 .back {
@@ -547,16 +586,23 @@ li.charIdx {
 }
 
 .dropdown-button {
+  position: absolute;
+  left: 178%;
+  top: 117%;
   background-color: rgba(255,0,0,0.8);
   border: none;
   color: white;
   width: 200px;
-  height: 37px;
+  height: 45px;
   font-size: 14px;
-  border-radius: 10px
+  border-radius: 10px;
+  border: black solid 3px;
 }
 
 .newUserButton {
+  position: absolute;
+  left: 178%;
+  top: 100%;
   background-color: rgba(255,0,0,0.8);
   border: none;
   color: white;
@@ -565,6 +611,7 @@ li.charIdx {
   font-size: 14px;
   border-radius: 5px;
   margin-bottom: 20px;
+  border: black solid 3px;
 }
 
 
@@ -585,6 +632,7 @@ li.charIdx {
   display: flex;
   flex-direction: column;
   opacity: .75;
+  border: black solid 5px;
 }
 
 .pointsCounter p {
@@ -614,7 +662,7 @@ li.charIdx {
 }
 
 .dropdown-list li {
-  margin-top: 3px;
+  /*margin-top: 3px;*/
 }
 
 .dropdown-list {
@@ -623,25 +671,27 @@ li.charIdx {
   margin-left: 10px;
   margin-right: 50px;
   list-style-position:inside;
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  /*border-bottom: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;*/
   list-style-type: none;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-color: black;
   background-color: white;
   position: absolute;
+  top: 14%;
   z-index: 4;
   width: 176px;
 }
 
 .dropDownButton {
+  border: black solid 3px;
   background-color: rgba(255,0,0,0.8);
   color: white;
-  border: none;
+  /*border: none;*/
   height: 30px;
   width: 100%;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  /*border-bottom-left-radius: 5px;*/
+  /*border-bottom-right-radius: 5px;*/
 }

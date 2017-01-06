@@ -31,14 +31,14 @@ The sun object is hidden behind the text using positive: absolute and the
 z-index. This allows different nodes to be placed at various levels on
 the page.
 
-![sun animation picture](images/production_images/sunani.png)
+![sun animation picture](images/sunani.png)
 
 Below the standard CSS for borders and such are the keyframes needed to
 have the object move. The animations here do two things, the first is it
 moves the sun object up 120 pixels. The second is that the object's size
 grows from 30% to 140%. (We can see this in the .3 -> 1.4)
 
-![dropdown example](images/production_images/dropdown.png)
+![dropdown example](images/dropdown.png)
 
 Of note here is the dropdown. It is a handrolled feature, as the built in
 dropdowns do not allow as much flexibility as I had wanted. It's easily created

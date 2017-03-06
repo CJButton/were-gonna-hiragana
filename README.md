@@ -3,6 +3,7 @@
 
 Were-Gonna-Hiragana
 --------------------------------
+Project can be accessed at: https://cjbutton.github.io/were-gonna-hiragana/#/
 
 Were-Gonna-Hiragana is an education application designed to help users
 gain basic ability to read Japanese letters.
